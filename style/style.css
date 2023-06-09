@@ -84,3 +84,32 @@
         left: 150px;
         cursor: pointer;
     }
+    button {
+        border: solid 0.5px rgba( 255, 255, 255, 0.5);
+        background-color: transparent;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+}
+
+nav {
+border-top: solid 0.5px rgba( 255, 255, 255, 0.5);
+padding: 10px;
+margin: 10px;
+}
+
+.history {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.history p {
+    cursor: pointer;
+}
