@@ -10,14 +10,14 @@
     }
 
     h1 {
-    font-size: 33px;
+    font-size: 35px;
     font-weight: 600;
-    padding: 200px 0;
+    padding: 350px 0;
 }
  
     .side-var {
       background-color: #18191b;
-      width: 244px;
+      width: 250px;
       height: 100vh;
       display: flex;
       flex-direction:column ;
@@ -28,9 +28,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
         justify-content: space-between;
-        height: 100vh ;
+        height: 100vh;
+        text-align: center;
+        width: 100%;
+        
+    }
+
+    .bottom-section {
+      width: 100%;  
+      display: flex;
+      flex-direction: column ;
+      justify-content: center ;
+      align-items: center;
     }
 
     .info {
@@ -43,7 +53,7 @@
         border: none;
         background-color: rgba( 255, 255, 255, 0.5);
         width: 100%;
-        font-size: 25px;
+        font-size: 20px;
         padding: 12px 15px;
         border-radius: 7px;
         -webkit-border-radius: 7px;
@@ -59,4 +69,18 @@
 
     input:focus {
         outline: none;
+    }
+
+    .input-countainer {
+        position: relative;
+        width: 100%;
+        max-width: 650px;
+    }
+     
+    .submit {
+        position: relative;
+        right: 0;
+        bottom: 33px;
+        left: 150px;
+        cursor: pointer;
     }
