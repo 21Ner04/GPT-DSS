@@ -1,8 +1,5 @@
-# Dream_Squad_Six_
-
-## Dream_Squad_Six_
-ы
-
-## Dream_Squad_Six_
-
-## Dream_Squad_Six_
+Verstka
+1 / Сделать кликабильные кнопки (new chat)(➤)
+2 / выше Make DSS -> Смену темы (темная-светлая)
+3 / выше Make DSS -> различные языки
+4 / выше Make DSS -> смену с GPT 4 на GPT 3.5
