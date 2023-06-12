@@ -8,3 +8,4 @@ Verstka
 7 / Сделать webpack, если будет нужно(доп задача)
 8 / Сделать codeClimate и badge git actions, а также test coverage(codeClimate)
 9 / Начать писать тесты(тестировщик)
+10 / А также провести созвон в ближайшее время
