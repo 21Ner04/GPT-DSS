@@ -7,3 +7,4 @@ Verstka
 6 / сделать анимацию ответа от gpt
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/1014970eb5049e45321e/maintainability)](https://codeclimate.com/github/AndreyPiganov/Dream_Squad_Six_/maintainability)
+[![Project CI](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/projectCI.yml/badge.svg?branch=main)](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/projectCI.yml)
