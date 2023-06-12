@@ -77,14 +77,15 @@
         max-width: 650px;
     }
      
-    .submit {
+    .btn-submit {
+        border: solid 0px rgba( 255, 255, 255, 0.5);
+        background-color: transparent;
         position: relative;
-        right: 0;
         bottom: 33px;
-        left: 150px;
-        cursor: pointer;
+        left: 160px;
+        width: 8%;
     }
-    button {
+    .btn {
         border: solid 0.5px rgba( 255, 255, 255, 0.5);
         background-color: transparent;
         border-radius: 5px;
@@ -94,7 +95,17 @@
         -o-border-radius: 5px;
         padding: 10px;
         margin: 10px;
+        cursor: pointer;
 }
+    .active {
+        background-color: green;
+        cursor: pointer;
+        border: solid 0px green;
+        position: relative;
+        bottom: 33px;
+        left: 160px;
+        width: 8%;
+    }
 
 nav {
 border-top: solid 0.5px rgba( 255, 255, 255, 0.5);
