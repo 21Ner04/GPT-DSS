@@ -2,10 +2,10 @@
   "name": "dream_squad_six_",
   "version": "1.0.0",
   "description": "ChatGPT from people",
-  "main": "main.js",
+  "main": "src/main.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack"
   },
   "repository": {

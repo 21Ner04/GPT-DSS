@@ -19,3 +19,4 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npx eslint 
+      - run: npm test
