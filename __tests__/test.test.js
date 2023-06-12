@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-undef
 test('test', () => {
-    expect('to').toEqual('to')
-})
+  // eslint-disable-next-line no-undef
+  expect('to').toEqual('to');
+});
