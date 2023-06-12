@@ -1,9 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 const state = {};
-const submitButton = document.querySelector('.submit');
+const input = document.querySelector('input');
+const submitButton = document.querySelector('.btn-submit');
 const addButton = document.querySelector('.add-chat');
 const regenerateButton = document.querySelector('.response');
-submitButton.addEventListener('click', () => {
+submitButton.addEventListener('click', (event) => {
   // eslint-disable-next-line no-alert
   alert('я отправляю запрос');
 });
