@@ -14,29 +14,40 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   </head>
-</head>
 <body>
   <section class="side-var">
-    <button>New Chat</button>
-    <div class="history"></div>
-  <nav>
+    <button class="test" active>New Chat</button>
+    <nav class="history">
+      <ul>
+        
+      </ul>
+    </nav>
       <p>Made DSS</p>
-  </nav>
   </section>
   <section class="main">
     <h1>Chat GPT by DSS</h1>
     <p id="output"></p>
     <div class="bottom-section">
       <div class="input-container">
-        <input/>
-        <div class="submit">➤</div>
+        <form>
+          <div class="button-container">
+            <button class="response">
+              Regenerate response
+            </button>
+          </div>
+          <div class="input-button-container">
+        <input>
+        <button class="submit">
+            ➤ click me
+        </button>
+        </div>
+      </form>
       </div>
     </div>
     <p class="info">
       This is a demo version of our GPTChat by DSS
     </p>
   </section>
-
-  <script src="/main.js"></script>
+  <script src="../src/main.js"></script>
 </body>
 </html>

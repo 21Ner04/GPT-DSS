@@ -1,0 +1,23 @@
+{
+  "name": "dream_squad_six_",
+  "version": "1.0.0",
+  "description": "ChatGPT from people",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/21Ner04/Dream_Squad_Six_.git"
+  },
+  "author": "Dream_Squad_Six",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/21Ner04/Dream_Squad_Six_/issues"
+  },
+  "homepage": "https://github.com/21Ner04/Dream_Squad_Six_#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "i18next": "^22.5.1"
+  }
+}
