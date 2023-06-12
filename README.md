@@ -7,5 +7,6 @@ Verstka
 6 / сделать анимацию ответа от gpt
 7 / Сделать codeClimate coverage, а также настроить workflow полностью
 8 / Начать прописывать тесты для бэка
+9 / (доп задача) Подключить webpack, если будет нужно.
 [![Maintainability](https://api.codeclimate.com/v1/badges/1014970eb5049e45321e/maintainability)](https://codeclimate.com/github/AndreyPiganov/Dream_Squad_Six_/maintainability)
 [![Project CI](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/project.yml/badge.svg?branch=featureBugFix)](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/project.yml)
