@@ -22,7 +22,6 @@
       display: flex;
       flex-direction:column ;
       justify-content: space-between;
-      cursor: pointer;
     }
 
     .main {
@@ -95,6 +94,7 @@
         -o-border-radius: 5px;
         padding: 10px;
         margin: 10px;
+        cursor: pointer;
 }
 
 nav {
