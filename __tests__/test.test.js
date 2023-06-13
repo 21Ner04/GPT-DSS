@@ -5,4 +5,3 @@ test('test', () => {
   // eslint-disable-next-line no-undef
   expect('to').toEqual('to');
   expect(rumPrompt()).toEqual('man')
-});
