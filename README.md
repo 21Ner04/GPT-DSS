@@ -14,3 +14,4 @@ Zadachi
 8 / Сделать codeClimate и badge git actions, а также test coverage(codeClimate)
 9 / Начать писать тесты(тестировщик)
 
+css и html ноужно будет изменить после кода js

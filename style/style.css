@@ -80,6 +80,7 @@
     
     .btn-more {
         align-items: flex-start;
+        color:rgba( 255, 255, 255, 0.5);
     }
 
     .theme-toggle {
