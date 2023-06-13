@@ -53,6 +53,7 @@
         border: none;
         background-color: rgba( 255, 255, 255, 0.05);
         width: 100%;
+        height: auto;
         resize: none;
         font-size: 20px;
         padding: 12px 15px;
@@ -75,7 +76,7 @@
         background-color: transparent; /* Прозрачный фон скроллбара */
     }
 
-    input:focus {
+    textarea:focus {
         outline: none;
     }
 
