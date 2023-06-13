@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
     * {
- color: #b010c5
+ color: white;
 } 
     body {
       margin: 0;
@@ -22,6 +22,7 @@
       display: flex;
       flex-direction:column ;
       justify-content: space-between;
+      flex-shrink: 0;
     }
 
     .main {
@@ -79,6 +80,21 @@
     textarea:focus {
         outline: none;
     }
+    
+    .btn-more {
+        align-items: flex-start;
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .theme-toggle img {
+        width: 25px;
+        height: 25px;
+      }
 
     .input-countainer {
         position: relative;
@@ -117,7 +133,7 @@
     }
 
 nav {
-border-top: solid 0.5px rgba( 255, 255, 255, 0.5);
+border-bottom: solid 0.5px rgba( 255, 255, 255, 0.5);
 padding: 10px;
 margin: 10px;
 }
