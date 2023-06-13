@@ -16,13 +16,15 @@
   </head>
 <body>
   <section class="side-var">
-    <button class="btn add-chat" active>New Chat</button>
     <nav class="history">
-      <ul>
-        
-      </ul>
+    <button class="btn add-chat" active>New Chat</button>
     </nav>
+    <div class="btn-more">
+        <button class="theme-toggle" disabled>☼ Light mode</button>
+        <button class="theme-toggle" disabled>☾ Dark mode</button>
+        <button class="theme-toggle" disabled><p> <img src="assets/favicon-ru-flag/favicon-ru-32x32.png" alt="ru">  <img src="assets/favicon-e-flag/favicon-e-32x32.png" alt="e"></p></button>
       <p>Made DSS</p>
+      </div>
   </section>
   <section class="main">
     <h1>Chat GPT by DSS</h1>
@@ -36,8 +38,9 @@
             </button>
           </div>
           <div class="input-button-container">
-        <input>
+        <textarea placeholder="Send a message" cols="110" rows="5"> </textarea>
         <button class="btn-submit" disabled>➤</button>
+        <button class="btn-trash" disabled>🗑️</button>
         </div>
       </form>
       </div>

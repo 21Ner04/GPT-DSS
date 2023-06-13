@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
     * {
- color: #b010c5
+ color: white;
 } 
     body {
       margin: 0;
@@ -10,7 +10,7 @@
     }
 
     h1 {
-    font-size: 35px;
+    font-size: 20px;
     font-weight: 600;
     padding: 350px 0;
 }
@@ -22,6 +22,7 @@
       display: flex;
       flex-direction:column ;
       justify-content: space-between;
+      flex-shrink: 0;
     }
 
     .main {
@@ -49,42 +50,70 @@
         padding: 10px;
     }
 
-    input {
+    textarea {
         border: none;
         background-color: rgba( 255, 255, 255, 0.05);
-        width: 100%;
+        width: 700px; /* меняет ширину */
+        height: 20px;
+        resize: none;
+        overflow: hidden;  /* убирает ползунок прокрутки */
         font-size: 20px;
         padding: 12px 15px;
-        border-radius: 7px;
-        -webkit-border-radius: 7px;
-        -moz-border-radius: 7px;
-        -ms-border-radius: 7px;
-        -o-border-radius: 7px;
-        box-shadow: rgba( 0, 0, 0, 0.05) 0 54px 55px,
-        rgba( 0, 0, 0, 0.05) 0 -12px 30px
-        rgba( 0, 0, 0, 0.05) 0 4px 5px,
-        rgba( 0, 0, 0, 0.05) 0 12px 3px,
-        rgba( 0, 0, 0, 0.05) 0 -3px 5px,
+        border-radius: 15px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        box-shadow: rgba( 0, 0, 0, 0.05) 0 54px 55px,        rgba( 0, 0, 0, 0.05) 0 -12px 30px        rgba( 0, 0, 0, 0.05) 0 4px 5px,        rgba( 0, 0, 0, 0.05) 0 12px 3px,        rgba( 0, 0, 0, 0.05) 0 -3px 5px,    ;
+}
+    textarea::-webkit-scrollbar-thumb {
+        background-color: #888; /* Цвет ползунка скроллбара */
     }
 
-    input:focus {
+    textarea::-webkit-scrollbar {
+        background-color: transparent; /* Прозрачный фон скроллбара */
+    }
+
+    textarea:focus {
         outline: none;
     }
+    
+    .btn-more {
+        align-items: flex-start;
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
 
     .input-countainer {
         position: relative;
         width: 100%;
         max-width: 650px;
     }
-     
+
     .btn-submit {
+        border: solid 0px rgba(223, 215, 215, 0.5);
+        background-color: transparent;
+        position: relative;
+        bottom: 12px;
+        left: -20px;
+        width: 8%;
+        font-size: 30px;
+        color: rgb(78, 65, 65);
+    }
+    .btn-trash {
         border: solid 0px rgba( 255, 255, 255, 0.5);
         background-color: transparent;
         position: relative;
-        bottom: 33px;
-        left: 160px;
+        bottom: 55px;
+        left: 390px;
         width: 8%;
+        font-size: 30px;
     }
+    
     .btn {
         border: solid 0.5px rgba( 255, 255, 255, 0.5);
         background-color: transparent;
@@ -108,7 +137,7 @@
     }
 
 nav {
-border-top: solid 0.5px rgba( 255, 255, 255, 0.5);
+border-bottom: solid 0.5px rgba( 255, 255, 255, 0.5);
 padding: 10px;
 margin: 10px;
 }
