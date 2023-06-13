@@ -53,10 +53,10 @@
     textarea {
         border: none;
         background-color: rgba( 255, 255, 255, 0.05);
-        width: 700px;
+        width: 700px; /* меняет ширину */
         height: 20px;
         resize: none;
-        overflow: hidden;
+        overflow: hidden;  /* убирает ползунок прокрутки */
         font-size: 20px;
         padding: 12px 15px;
         border-radius: 15px;
@@ -87,26 +87,33 @@
         border: none;
         cursor: pointer;
       }
-      
-      .theme-toggle img {
-        width: 25px;
-        height: 25px;
-      }
 
     .input-countainer {
         position: relative;
         width: 100%;
         max-width: 650px;
     }
-     
+
     .btn-submit {
+        border: solid 0px rgba(223, 215, 215, 0.5);
+        background-color: transparent;
+        position: relative;
+        bottom: 12px;
+        left: -20px;
+        width: 8%;
+        font-size: 30px;
+        color: rgb(78, 65, 65);
+    }
+    .btn-trash {
         border: solid 0px rgba( 255, 255, 255, 0.5);
         background-color: transparent;
         position: relative;
-        bottom: 33px;
-        left: 160px;
+        bottom: 55px;
+        left: 390px;
         width: 8%;
+        font-size: 30px;
     }
+    
     .btn {
         border: solid 0.5px rgba( 255, 255, 255, 0.5);
         background-color: transparent;
