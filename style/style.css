@@ -2,10 +2,17 @@
     * {
  color: white;
 } 
-    body {
+    .body-black{
       margin: 0;
       padding: 0;
       background-color: #111124;
+      display: flex;
+    }
+
+    .body-white {
+      margin: 0;
+      padding: 0;
+      background-color: white;
       display: flex;
     }
 
@@ -33,7 +40,6 @@
         height: 100vh;
         text-align: center;
         width: 100%;
-        
     }
 
     .bottom-section {
@@ -51,9 +57,12 @@
     }
 
     textarea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
         background-color: rgba( 255, 255, 255, 0.05);
-        width: 700px; /* меняет ширину */
+        width: 800px; /* меняет ширину */
         height: 20px;
         resize: none;
         overflow: hidden;  /* убирает ползунок прокрутки */
@@ -83,7 +92,7 @@
         color:rgba( 255, 255, 255, 0.5);
     }
 
-    .theme-toggle {
+    .theme {
         background: none;
         border: none;
         cursor: pointer;
@@ -99,8 +108,8 @@
         border: solid 0px rgba(223, 215, 215, 0.5);
         background-color: transparent;
         position: relative;
-        bottom: 12px;
-        left: -20px;
+        bottom: 47px;
+        left: 470px;
         width: 8%;
         font-size: 30px;
         color: rgb(78, 65, 65);
@@ -109,8 +118,8 @@
         border: solid 0px rgba( 255, 255, 255, 0.5);
         background-color: transparent;
         position: relative;
-        bottom: 55px;
-        left: 390px;
+        bottom: 47px;
+        left: 450px;
         width: 8%;
         font-size: 30px;
     }
