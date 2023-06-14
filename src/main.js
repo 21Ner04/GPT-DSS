@@ -13,7 +13,7 @@ toggle.addEventListener('click', (event) =>{
     event.target.classList.remove('dark-mode');
     event.target.classList.add('light-mode');
     event.target.textContent = '☾ Dark mode'
-    section.forEach((element) =>{
+    elementSection.forEach((element) =>{
       element.style.color = 'black';
     })
   }else{
@@ -22,7 +22,7 @@ toggle.addEventListener('click', (event) =>{
     body.classList.remove('body-white') 
     body.classList.add('body-black') 
     event.target.textContent = '☼ Light mode';
-    section.forEach((element) =>{
+    elementSection.forEach((element) =>{
       element.style.color = 'white';
     })
   }
