@@ -1,4 +1,4 @@
-import rumPrompt from '../src/libs/getApi.js'
+import rumPrompt from '../src/server.js'
 
 // eslint-disable-next-line no-undef
 test('test', () => {
