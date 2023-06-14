@@ -4,6 +4,8 @@ const body = document.body
 const submitButton = document.querySelector('.btn-submit');
 const addButton = document.querySelector('.add-chat');
 const regenerateButton = document.querySelector('.response');
+
+// dark - light mode knopka
 const toggle = document.querySelector('.theme')
 toggle.addEventListener('click', (event) =>{
   const elementSection = document.querySelector('.main').querySelectorAll('*')
@@ -27,6 +29,17 @@ toggle.addEventListener('click', (event) =>{
     })
   }
 })
+// -----------------------------------------------------
+
+// re - e flag knopka
+const flag = document.querySelector(".theme-toggle")
+flag.addEventListener('click', (event) =>{
+ const img = document.createElement('img') 
+ img.src="../assets/favicon/favicon-ru-32x32.png"
+ event.target.closest("p").innerHtml = `${img}`
+})
+// -----------------------------------------------------
+
 submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
   alert('я отправляю запрос');
