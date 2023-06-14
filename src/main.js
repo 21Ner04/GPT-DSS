@@ -1,9 +1,14 @@
 // eslint-disable-next-line no-unused-vars
-const state = {};
+const state = 
+{
+  lang: 'en',
+};
 const body = document.body
 const submitButton = document.querySelector('.btn-submit');
 const addButton = document.querySelector('.add-chat');
 const regenerateButton = document.querySelector('.response');
+
+// dark - light mode knopka
 const toggle = document.querySelector('.theme')
 toggle.addEventListener('click', (event) =>{
   const elementSection = document.querySelector('.main').querySelectorAll('*')
@@ -27,6 +32,23 @@ toggle.addEventListener('click', (event) =>{
     })
   }
 })
+// -----------------------------------------------------
+
+// re - e flag knopka
+const language = document.querySelector(".theme-toggle")
+language.addEventListener('click', (event) =>{
+  if(state.lang === 'en'){
+  event.target.src = 'assets/favicon/favicon-ru-32x32.png';
+  event.alt = 'ru';
+  state.lang = 'ru';
+}else{
+  event.target.src = 'assets/favicon/favicon-e-32x32.png';
+  event.alt = 'en';
+  state.lang = 'en';
+}
+})
+// -----------------------------------------------------
+
 submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
   alert('я отправляю запрос');
