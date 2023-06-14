@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "nodemon src/libs/getApi.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
   "homepage": "https://github.com/21Ner04/Dream_Squad_Six_#readme",
   "dependencies": {
     "axios": "^1.4.0",
-    "i18next": "^22.5.1"
+    "i18next": "^22.5.1",
+    "openai": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^8.42.0",
