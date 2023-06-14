@@ -2,10 +2,17 @@
     * {
  color: white;
 } 
-    body {
+    .body-black{
       margin: 0;
       padding: 0;
       background-color: #111124;
+      display: flex;
+    }
+
+    .body-white {
+      margin: 0;
+      padding: 0;
+      background-color: white;
       display: flex;
     }
 
@@ -85,7 +92,7 @@
         color:rgba( 255, 255, 255, 0.5);
     }
 
-    .theme-toggle {
+    .theme {
         background: none;
         border: none;
         cursor: pointer;
