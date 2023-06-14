@@ -1,9 +1,7 @@
-import rumPrompt from '../src/libs/getApi.js'
+import runPrompt from '../src/server.js';
 
 // eslint-disable-next-line no-undef
 test('test', () => {
   // eslint-disable-next-line no-undef
   expect('to').toEqual('to');
-  expect(rumPrompt()).toEqual('man')
-}
-)
+  expect(runPrompt()).toBe('to')
