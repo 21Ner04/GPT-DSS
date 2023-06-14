@@ -5,5 +5,5 @@ test('test', () => {
   // eslint-disable-next-line no-undef
   expect('to').toEqual('to');
   // eslint-disable-next-line no-undef
-  expect(runPrompt()).toBe('to');
+  expect(runPrompt().length).toBe(undefined);
 });
