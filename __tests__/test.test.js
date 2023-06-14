@@ -1,8 +1,8 @@
-import test from '../src/server.js';
+import runPrompt from '../src/server.js';
 
 // eslint-disable-next-line no-undef
 test('test', () => {
   // eslint-disable-next-line no-undef
   expect('to').toEqual('to');
-  expect(test()).toEqual('test')
+  expect(runPrompt()).toBe('to')
 })
