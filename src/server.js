@@ -20,7 +20,8 @@ const runPrompt = async () => {
 
   const parsableJSONresponse = response.data.choices[0].text;
   const parsedJSON = JSON.parse(parsableJSONresponse);
-  console.log(parsedJSON);
 };
-runPrompt();
-export default runPrompt;
+const test = () =>{
+  return 'test'
+}
+export default test;
