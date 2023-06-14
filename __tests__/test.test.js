@@ -4,4 +4,6 @@ import runPrompt from '../src/server.js';
 test('test', () => {
   // eslint-disable-next-line no-undef
   expect('to').toEqual('to');
-  expect(runPrompt()).toBe('to')
+  // eslint-disable-next-line no-undef
+  expect(runPrompt()).toBe('to');
+});

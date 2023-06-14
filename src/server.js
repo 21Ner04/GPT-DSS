@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import { Configuration, OpenAIApi } from 'openai';
 
 const config = new Configuration({
@@ -19,7 +17,6 @@ const runPrompt = async () => {
   });
 
   const parsableJSONresponse = response.data.choices[0].text;
-  const parsedJSON = JSON.parse(parsableJSONresponse);
-  return 0;
+  return parsableJSONresponse;
 };
 export default runPrompt;
