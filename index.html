@@ -20,7 +20,8 @@
     <button class="btn add-chat" active>New Chat</button>
     </nav>
     <div class="btn-more">
-        <button class="theme dark-mode">☼ Light mode</button>
+      <p> <button class="theme dark-mode">☼ Light mode</button></p>
+        <button class="theme-toggle" ><img src="assets/favicon/favicon-e-32x32.png" alt="ru" width="30px" height="25px"></button>
       <p>Made DSS</p>
       </div>
 </section>
@@ -38,8 +39,8 @@
           <div class="input-button-container">
         <textarea placeholder="Send a message" cols="110" rows="0"> </textarea>
           <div id="answer" class="hidden">  <!--   Код для отображения ответа  - работает ли>? если что удалить и в html и css --></div>
-        <button class="btn-submit" disabled>➤</button>
-        <button class="btn-trash" disabled>🗑️</button>
+        <button class="btn-submit" >➤</button>
+        <button class="btn-trash" >🗑️</button>
         </div>
       </form>
       </div>
@@ -48,6 +49,6 @@
       This is a demo version of our GPTChat by DSS
     </p>
   </section>
-  <script src="src/main.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
