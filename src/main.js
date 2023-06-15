@@ -1,10 +1,8 @@
-import i18next from "i18next";
+import '../style/style.css';
 
-import "../style/style.css";
+import enImage from '../assets/images/favicon-e-32x32.png';
 
-import enImage from "../assets/images/favicon-e-32x32.png";
-
-import ruImage from "../assets/images/favicon-ru-32x32.png";
+import ruImage from '../assets/images/favicon-ru-32x32.png';
 
 const state = {
   lang: 'en',
@@ -13,8 +11,8 @@ const { body } = document;
 const submitButton = document.querySelector('.btn-submit');
 const addButton = document.querySelector('.add-chat');
 const regenerateButton = document.querySelector('.response');
-const languageButton = document.querySelector('.theme-toggle')
-languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`)
+const languageButton = document.querySelector('.theme-toggle');
+languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
 
 // dark - light mode knopka
 const toggle = document.querySelector('.theme');
