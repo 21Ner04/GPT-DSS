@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import i18next from 'i18next';
 
 import resources from './locales/index.js';
