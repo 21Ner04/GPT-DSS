@@ -211,4 +211,12 @@ select {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background-color: transparent;
   }
-  
+ 
+  .no-marker {
+    list-style-type: none;
+  }
+  .add-chat {
+    width: 90%;
+    text-align: center;
+    margin-left: 10px;
+  }
