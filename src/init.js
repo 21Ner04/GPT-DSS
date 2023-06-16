@@ -92,8 +92,14 @@ const app = async () => {
   // eslint-disable-next-line no-alert
     alert('я отправляю запрос');
   });
-  addButton.addEventListener('click', () => {
-  // eslint-disable-next-line no-alert
+  addButton.addEventListener('click', (event) => {
+    const ol = document.querySelector('.chat-list > ol');
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.textContent = 'New chat'
+    a.classList.add('btn')
+    li.appendChild(a);
+    ol.appendChild(li);
     alert('Я добавляю чат');
   });
   regenerateButton.addEventListener('click', () => {

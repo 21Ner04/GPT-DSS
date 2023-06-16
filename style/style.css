@@ -180,3 +180,11 @@ margin: 10px;
     opacity: 1;
     display: block;  /*  Код для отображения ответа  - работает ли>? если что удалить и в html и css */
   }
+  .no-marker {
+    list-style-type: none;
+  }
+  .add-chat {
+    width: 90%;
+    text-align: center;
+    margin-left: 10px;
+  }
