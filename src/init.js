@@ -1,4 +1,5 @@
 import i18next from 'i18next';
+
 import resources from './locales/index.js';
 
 import enImage from '../assets/images/favicon-e-32x32.png';
@@ -16,10 +17,16 @@ const app = async () => {
     lng: state.lang,
     resources,
   });
+  const changeLang = async (lang) =>{
+    await i18nextInstance.changeLanguage(lang);
+  }
 
   const { body } = document;
   // eslint-disable-next-line no-unused-vars
   const input = document.querySelector('textarea');
+  const title = document.querySelector('h1');
+  const p = document.querySelector('#inf');
+  const info = document.querySelector('.info');
   const submitButton = document.querySelector('.btn-submit');
   const addButton = document.querySelector('.add-chat');
   const regenerateButton = document.querySelector('.response');
@@ -28,6 +35,7 @@ const app = async () => {
 
   // dark - light mode knopka
   const toggle = document.querySelector('.theme');
+  toggle.name = 'themeDark'
   toggle.addEventListener('click', (event) => {
     const elementSection = document.querySelector('.main').querySelectorAll('*');
     const myEvent = event;
@@ -36,7 +44,8 @@ const app = async () => {
       body.classList.add('body-white');
       myEvent.target.classList.remove('dark-mode');
       myEvent.target.classList.add('light-mode');
-      myEvent.target.textContent = '☾ Dark mode';
+      myEvent.target.name = 'themeDark';
+      myEvent.target.textContent = i18nextInstance.t('themeDark');
       elementSection.forEach((element) => {
         const copyElement = element;
         copyElement.style.color = 'black';
@@ -46,7 +55,8 @@ const app = async () => {
       myEvent.target.classList.add('dark-mode');
       body.classList.remove('body-white');
       body.classList.add('body-black');
-      myEvent.target.textContent = '☼ Light mode';
+      myEvent.target.name = 'themeLight';
+      myEvent.target.textContent = i18nextInstance.t('themeLight');
       elementSection.forEach((element) => {
         const copyElement = element;
         copyElement.style.color = 'white';
@@ -68,6 +78,13 @@ const app = async () => {
       myEvent.alt = 'en';
       state.lang = 'en';
     }
+    changeLang(state.lang);
+    addButton.textContent = i18nextInstance.t('addChat');
+    regenerateButton.textContent = i18nextInstance.t('reset');
+    toggle.textContent = i18nextInstance.t(toggle.name);
+    info.textContent = i18nextInstance.t('info');
+    p.textContent = i18nextInstance.t('inf');
+    title.textContent = i18nextInstance.t('title');
   });
   // -----------------------------------------------------
 
