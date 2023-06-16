@@ -97,15 +97,16 @@ const app = async () => {
     alert('я отправляю запрос');
   });
   addButton.addEventListener('click', () => {
-    const ol = document.querySelector('.chat-list > ol');
+    const div = document.querySelector('.chat-list')
+    const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
     a.textContent = 'New chat';
-    a.classList.add('btn');
+    ol.classList.add('btn', 'no-marker');
+    li.classList.add('list-item');
     li.appendChild(a);
     ol.appendChild(li);
-    // eslint-disable-next-line no-alert
-    alert('Я добавляю чат');
+    div.appendChild(ol);
   });
   regenerateButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert

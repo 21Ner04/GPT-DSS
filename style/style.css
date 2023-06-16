@@ -229,5 +229,9 @@ select {
     text-align: center;
     border-style: dotted;
   }
+  .list-item {
+    justify-content: center;
+    text-align: center;
+  }
 
   
