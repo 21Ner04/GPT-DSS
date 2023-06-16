@@ -17,9 +17,9 @@ const app = async () => {
     lng: state.lang,
     resources,
   });
-  const changeLang = async (lang) =>{
+  const changeLang = async (lang) => {
     await i18nextInstance.changeLanguage(lang);
-  }
+  };
 
   const { body } = document;
   // eslint-disable-next-line no-unused-vars
@@ -35,7 +35,7 @@ const app = async () => {
 
   // dark - light mode knopka
   const toggle = document.querySelector('.theme');
-  toggle.name = 'themeDark'
+  toggle.name = 'themeDark';
   toggle.addEventListener('click', (event) => {
     const elementSection = document.querySelector('.main').querySelectorAll('*');
     const myEvent = event;
