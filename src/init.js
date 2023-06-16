@@ -2,6 +2,10 @@ import i18next from 'i18next';
 
 import resources from './locales/index.js';
 
+import '../assets/favicon/favicon-16x16.png';
+
+import '../assets/favicon/favicon-32x32.png';
+
 import enImage from '../assets/images/favicon-e-32x32.png';
 
 import ruImage from '../assets/images/favicon-ru-32x32.png';
