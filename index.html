@@ -21,12 +21,12 @@
     </nav>
     <div class="btn-more">
       <p> <button class="theme dark-mode">☼ Light mode</button></p>
-        <button class="theme-toggle" ><img src="assets/favicon/favicon-e-32x32.png" alt="ru" width="30px" height="25px"></button>
-      <p>Made DSS</p>
+        <button class="theme-toggle" ></button>
+      <p id="inf">Made DSS</p>
       </div>
 </section>
   <section class="main">
-    <h1>Chat GPT by DSS</h1>
+    <h1>ChatGPT by DSS</h1>
     <p id="output"></p>
     <div class="bottom-section">
       <div class="input-container">
@@ -39,14 +39,14 @@
           <div class="input-button-container">
         <textarea placeholder="Send a message" cols="110" rows="0"> </textarea>
           <div id="answer" class="hidden">  <!--   Код для отображения ответа  - работает ли>? если что удалить и в html и css --></div>
-        <button class="btn-submit" >➤</button>
-        <button class="btn-trash" >🗑️</button>
+        <button class="btn-submit" disabled>➤</button>
+        <button class="btn-trash" disabled>🗑️</button>
         </div>
       </form>
       </div>
     </div>
     <p class="info">
-      This is a demo version of our GPTChat by DSS
+      This is a demo version of our ChatGPT by DSS
     </p>
   </section>
   <script type="module" src="./src/main.js"></script>
