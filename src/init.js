@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import i18next from 'i18next';
 
 import resources from './locales/index.js';
@@ -28,7 +29,7 @@ const app = async () => {
   const { body } = document;
   // eslint-disable-next-line no-unused-vars
   const input = document.querySelector('textarea');
-  const aElements = document.querySelectorAll('a')
+  const aElements = document.querySelectorAll('a');
   const title = document.querySelector('h1');
   const p = document.querySelector('#inf');
   const info = document.querySelector('.info');
@@ -84,9 +85,9 @@ const app = async () => {
       state.lang = 'en';
     }
     changeLang(state.lang);
-    aElements.forEach((a) =>{
+    aElements.forEach((a) => {
       a.textContent = i18nextInstance.t('addChat');
-    })
+    });
     regenerateButton.textContent = i18nextInstance.t('reset');
     toggle.textContent = i18nextInstance.t(toggle.name);
     info.textContent = i18nextInstance.t('info');
@@ -100,7 +101,7 @@ const app = async () => {
     alert('я отправляю запрос');
   });
   addButton.addEventListener('click', () => {
-    const div = document.querySelector('.chat-list')
+    const div = document.querySelector('.chat-list');
     const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
