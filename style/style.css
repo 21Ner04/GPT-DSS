@@ -60,6 +60,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 2px solid #ccc;
+        padding: 10px;
         border: none;
         background-color: rgba( 255, 255, 255, 0.05);
         width: 800px; /* меняет ширину */
@@ -180,6 +182,36 @@ margin: 10px;
     opacity: 1;
     display: block;  /*  Код для отображения ответа  - работает ли>? если что удалить и в html и css */
   }
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+  
+  option {
+    color: black;
+    background-color: transparent;
+  }
+  
+  option:checked {
+    background-color: transparent;
+    color: rgb(48, 38, 38);
+  }
+  
+  select:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+  }
+  
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+  }
+ 
   .no-marker {
     list-style-type: none;
   }
