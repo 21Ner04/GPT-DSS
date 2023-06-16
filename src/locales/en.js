@@ -7,5 +7,6 @@ export default {
     info: 'This is a demo version of our ChatGPT by DSS',
     inf: 'Made DSS',
     title: 'ChatGPT by DSS',
+    trash: '🗑 Clear conversations',
   },
 };

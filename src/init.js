@@ -30,6 +30,7 @@ const app = async () => {
   // eslint-disable-next-line no-unused-vars
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
+  const trash = document.querySelector('.trash');
   const p = document.querySelector('#inf');
   const info = document.querySelector('.info');
   const submitButton = document.querySelector('.btn-submit');
@@ -90,6 +91,7 @@ const app = async () => {
     info.textContent = i18nextInstance.t('info');
     p.textContent = i18nextInstance.t('inf');
     title.textContent = i18nextInstance.t('title');
+    trash.textContent = i18nextInstance.t('trash');
   });
   // -----------------------------------------------------
 
