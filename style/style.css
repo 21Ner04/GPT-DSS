@@ -107,6 +107,12 @@
         cursor: pointer;
     }
 
+    .theme-trash {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
     .input-countainer {
         position: relative;
         width: 100%;
