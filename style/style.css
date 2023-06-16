@@ -225,13 +225,39 @@ select {
   .no-marker {
     list-style-type: none;
   }
+  
   .add-chat {
     text-align: center;
     border-style: dotted;
   }
+
   .list-item {
     justify-content: center;
     text-align: center;
+  }
+
+  .custom-scrollbar {
+    overflow-x: auto; /* Включение горизонтальной прокрутки */
+    white-space: nowrap; /* Запрет переноса строк */
+    overflow: hidden
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 6px; /* Высота скроллбара */
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888; /* Цвет ползунка скроллбара */
+    border-radius: 4px; /* Скругление углов ползунка п*/
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2); /* Цвет трека скроллбара */
+  }
+
+  .custom-scrollbar:hover {
+    overflow-y: auto; /* Включить вертикальную прокрутку при наведении */
   }
 
   

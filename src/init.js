@@ -28,6 +28,7 @@ const app = async () => {
   const { body } = document;
   // eslint-disable-next-line no-unused-vars
   const input = document.querySelector('textarea');
+  const aElements = document.querySelectorAll('a')
   const title = document.querySelector('h1');
   const p = document.querySelector('#inf');
   const info = document.querySelector('.info');
@@ -83,7 +84,9 @@ const app = async () => {
       state.lang = 'en';
     }
     changeLang(state.lang);
-    addButton.textContent = i18nextInstance.t('addChat');
+    aElements.forEach((a) =>{
+      a.textContent = i18nextInstance.t('addChat');
+    })
     regenerateButton.textContent = i18nextInstance.t('reset');
     toggle.textContent = i18nextInstance.t(toggle.name);
     info.textContent = i18nextInstance.t('info');
@@ -101,7 +104,7 @@ const app = async () => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.textContent = 'New chat';
+    a.textContent = i18nextInstance.t('addChat');
     ol.classList.add('btn', 'no-marker');
     li.classList.add('list-item');
     li.appendChild(a);
