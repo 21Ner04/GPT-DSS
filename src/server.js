@@ -17,7 +17,7 @@ async function getMessage() {
     },
     body: JSON.stringify({
       model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: '2+6=?!' }],
+      messages: [{ role: 'user', content: 'как сделать sidebar чтобы его можно было скрыить и открыть. Напиши html js css' }],
       max_tokens: 100,
     }),
 
