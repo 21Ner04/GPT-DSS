@@ -5,7 +5,7 @@ const tester = () => {
 };
 export default tester;
 
-const API_KEY = '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';
+const API_KEY = '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';
 
 async function getMessage() {
   console.log('clicked');
@@ -17,7 +17,7 @@ async function getMessage() {
     },
     body: JSON.stringify({
       model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: '2+2=?!' }],
+      messages: [{ role: 'user', content: '2+6=?!' }],
       max_tokens: 100,
     }),
 
@@ -25,7 +25,7 @@ async function getMessage() {
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', options);
     const data = await response.json();
-    console.log(data);
+    console.log(data.choices[0]);
   } catch (error) {
     console.error(error);
   }
