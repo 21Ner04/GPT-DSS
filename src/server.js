@@ -5,7 +5,7 @@ const tester = () => {
 };
 export default tester;
 
-const API_KEY = ' --------------------------------------------------YOUR_API_KEY -------------------------------------------';
+const API_KEY = ' --------------------------------------------------YOUR_API_KEY ------------------------------------------- ';
 
 async function getMessage() {
   console.log('clicked');
@@ -17,7 +17,7 @@ async function getMessage() {
     },
     body: JSON.stringify({
       model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: 'как сделать sidebar чтобы его можно было скрыить и открыть. Напиши html js css' }],
+      messages: [{ role: 'user', content: '--------------------------------------------------Вопрос который хочешь задать-------------------------------------------' }],
       max_tokens: 100,
     }),
 
