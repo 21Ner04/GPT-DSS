@@ -5,7 +5,7 @@ const tester = () => {
 };
 export default tester;
 
-const API_KEY = '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';
+const API_KEY = ' --------------------------------------------------YOUR_API_KEY -------------------------------------------';
 
 async function getMessage() {
   console.log('clicked');
