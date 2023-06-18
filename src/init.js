@@ -39,6 +39,8 @@ const app = async () => {
   const languageButton = document.querySelector('.theme-toggle');
   languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
 
+  // ----------------------------------------------------------------------------------------------
+
   // dark - light mode knopka
   const toggle = document.querySelector('.theme');
   toggle.name = 'themeDark';
@@ -69,7 +71,7 @@ const app = async () => {
       });
     }
   });
-  // -----------------------------------------------------
+  // ----------------------------------------------------------------------------------------------
 
   // re - e flag knopka
   const language = document.querySelector('.theme-toggle');
@@ -93,7 +95,7 @@ const app = async () => {
     title.textContent = i18nextInstance.t('title');
     trash.textContent = i18nextInstance.t('trash');
   });
-  // -----------------------------------------------------
+  // ---------------------------------------------------------------
 
   submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
