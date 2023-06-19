@@ -16,7 +16,7 @@ let messages = [{
   content: 'You-user',
 }];
 
-const API_KEY = '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';
+const API_KEY = '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';
 
 // eslint-disable-next-line no-unused-vars
 const update = (messages, role, content) => {
