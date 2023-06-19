@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 // Импортируем библиотеку для работы с HTTP-запросами (например, axios
 import axios from 'axios';
 
@@ -9,31 +10,31 @@ const tester = () => {
 };
 export default tester;
 
-
-let messages= [{
-  role: 'system', 
-  content: 'You-user'
+let messages = [{
+  role: 'system',
+  content: 'You-user',
 }];
 
 const API_KEY = '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';
 
-const update = (messages, role, content) =>{
-  messages.push({role, content})
-}
+// eslint-disable-next-line no-unused-vars
+const update = (messages, role, content) => {
+  messages.push({ role, content });
+};
 
-const resetMessages = () =>{
+// eslint-disable-next-line no-unused-vars
+const resetMessages = () => {
   messages = [];
   messages.push({
-    role: 'system', 
-    content: 'You-user'
-  })
-}
+    role: 'system',
+    content: 'You-user',
+  });
+};
 
 async function sendMessage(message) {
-
   const data = {
     model: 'gpt-3.5-turbo',
-    messages: [{role: 'system', content: 'You-user'},{role:'user', content: message}],
+    messages: [{ role: 'system', content: 'You-user' }, { role: 'user', content: message }],
     max_tokens: 4000,
   };
 
@@ -52,4 +53,4 @@ async function sendMessage(message) {
     console.error(error);
   }
 }
-sendMessage('Как меня зовут?')
+sendMessage('Сколько будет 2+2?');
