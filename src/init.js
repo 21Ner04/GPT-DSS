@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import i18next from 'i18next';
 
 import resources from './locales/index.js';
@@ -31,6 +30,7 @@ const app = async () => {
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
   const trash = document.querySelector('.trash');
+  const list = document.querySelector('.chat-list');
   const p = document.querySelector('#inf');
   const info = document.querySelector('.info');
   const submitButton = document.querySelector('.btn-submit');
@@ -96,7 +96,9 @@ const app = async () => {
     trash.textContent = i18nextInstance.t('trash');
   });
   // ---------------------------------------------------------------
-
+  trash.addEventListener('click', (event) =>{
+    list.innerHTML = '';
+  })
   submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('я отправляю запрос');

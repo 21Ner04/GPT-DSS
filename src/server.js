@@ -1,34 +1,55 @@
-/* eslint-disable no-console */
+// Импортируем библиотеку для работы с HTTP-запросами (например, axios
+import axios from 'axios';
+
+// Переменная для хранения истории сообщений
+
 const tester = () => {
   const response = 0;
   return response + 1;
 };
 export default tester;
 
-const API_KEY = ' --------------------------------------------------YOUR_API_KEY ------------------------------------------- ';
 
-async function getMessage() {
-  console.log('clicked');
-  const options = {
-    method: 'POST',
+let messages= [{
+  role: 'system', 
+  content: 'You-user'
+}];
+
+const API_KEY = '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';
+
+const update = (messages, role, content) =>{
+  messages.push({role, content})
+}
+
+const resetMessages = () =>{
+  messages = [];
+  messages.push({
+    role: 'system', 
+    content: 'You-user'
+  })
+}
+
+async function sendMessage(message) {
+
+  const data = {
+    model: 'gpt-3.5-turbo',
+    messages: [{role: 'system', content: 'You-user'},{role:'user', content: message}],
+    max_tokens: 4000,
+  };
+
+  const config = {
     headers: {
       Authorization: `Bearer ${API_KEY}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: '--------------------------------------------------YOUR QUESTION-------------------------------------------' }],
-      max_tokens: 100,
-    }),
-
   };
+
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', options);
-    const data = await response.json();
-    console.log(data.choices[0]);
+    const response = await axios.post('https://api.openai.com/v1/chat/completions', data, config);
+    const responseData = response.data.choices[0];
+    console.log(responseData);
   } catch (error) {
     console.error(error);
   }
 }
-
-console.log(getMessage());
+sendMessage('Как меня зовут?')
