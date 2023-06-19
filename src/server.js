@@ -54,4 +54,4 @@ async function sendMessage(message) {
     console.error(error);
   }
 }
-sendMessage('Сколько будет 2+4?');
+sendMessage('Сколько будет 4+4?');
