@@ -243,7 +243,6 @@ select {
   }
 
   .custom-scrollbar {
-    overflow-x: auto; /* Включение горизонтальной прокрутки */
     white-space: nowrap; /* Запрет переноса строк */
     overflow: hidden
   }
