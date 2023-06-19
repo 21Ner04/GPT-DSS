@@ -4,13 +4,12 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { fileURLToPath } from 'url';
 
+// eslint-disable-next-line eqeqeq
 const isProduction = process.env.NODE_ENV == 'production';
-
 
 const stylesHandler = 'style-loader';
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-
 
 const config = {
   entry: './src/main.js',
