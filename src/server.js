@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-shadow */
 // Импортируем библиотеку для работы с HTTP-запросами (например, axios
 import axios from 'axios';
@@ -53,4 +54,4 @@ async function sendMessage(message) {
     console.error(error);
   }
 }
-sendMessage('Сколько будет 2+2?');
+sendMessage('Сколько будет 2+4?');

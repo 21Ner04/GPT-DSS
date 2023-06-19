@@ -96,9 +96,10 @@ const app = async () => {
     trash.textContent = i18nextInstance.t('trash');
   });
   // ---------------------------------------------------------------
-  trash.addEventListener('click', (event) =>{
+  // eslint-disable-next-line no-unused-vars
+  trash.addEventListener('click', (event) => {
     list.innerHTML = '';
-  })
+  });
   submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('я отправляю запрос');
