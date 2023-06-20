@@ -130,16 +130,6 @@
         font-size: 30px;
         color: rgb(78, 65, 65);
     }
-    .btn-trash {
-        border: solid 0px rgba( 255, 255, 255, 0.5);
-        background-color: transparent;
-        position: relative;
-        bottom: 47px;
-        left: 450px;
-        width: 8%;
-        font-size: 30px;
-        cursor: pointer;
-    }
     
     .btn {
         border: solid 0.5px rgba( 255, 255, 255, 0.5);
@@ -188,11 +178,6 @@ margin: 10px;
     opacity: 0;
     display: none;
     transition: opacity 0.5s ease-in-out;  /*  Код для отображения ответа  - работает ли>? если что удалить и в html и css */
-  }
- 
-  .fadeIn {
-    opacity: 1;
-    display: block;  /*  Код для отображения ответа  - работает ли>? если что удалить и в html и css */
   }
 
 select {
