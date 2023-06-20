@@ -1,4 +1,4 @@
-import tester from '../src/server.js';
+import {tester } from '../src/server.js';
 
 // eslint-disable-next-line no-undef
 test('test', () => {

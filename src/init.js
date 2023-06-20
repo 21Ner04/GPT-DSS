@@ -1,5 +1,9 @@
 import i18next from 'i18next';
 
+import Messages from './components/Messages.js';
+
+import { sendMessage } from './server.js';
+
 import resources from './locales/index.js';
 
 import '../assets/favicon/favicon-16x16.png';
