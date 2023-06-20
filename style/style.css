@@ -230,11 +230,24 @@ select {
   
   .no-marker {
     list-style-type: none;
+    cursor: pointer;
+  }
+
+  .no-marker:hover {
+    background-color: #808080;
   }
   
   .add-chat {
     text-align: center;
     border-style: dotted;
+  }
+
+  .add-chat:hover {
+    background-color: #808080;
+  }
+
+  .active-chat {
+    background-color: #808080;
   }
 
   .list-item {

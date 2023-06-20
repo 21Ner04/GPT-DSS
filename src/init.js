@@ -19,7 +19,6 @@ const app = async () => {
     lang: 'en',
   };
 
-  // eslint-disable-next-line no-unused-vars
   const i18nextInstance = i18next.createInstance();
   await i18nextInstance.init({
     lng: state.lang,
@@ -41,6 +40,7 @@ const app = async () => {
   const addButton = document.querySelector('.add-chat');
   const regenerateButton = document.querySelector('.response');
   const languageButton = document.querySelector('.theme-toggle');
+  const form = document.querySelector('form');
   languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
 
   // ----------------------------------------------------------------------------------------------
@@ -109,20 +109,28 @@ const app = async () => {
     alert('я отправляю запрос');
   });
   addButton.addEventListener('click', () => {
+    const olAll = document.querySelectorAll('ol');
+    olAll.forEach((ol) =>{
+      ol.classList.remove('active-chat');
+    })
     const div = document.querySelector('.chat-list');
     const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
     a.textContent = i18nextInstance.t('addChat');
-    ol.classList.add('btn', 'no-marker');
+    ol.classList.add('btn', 'no-marker', 'active-chat');
     li.classList.add('list-item');
     li.appendChild(a);
     ol.appendChild(li);
-    div.appendChild(ol);
+    div.prepend(ol);
   });
   regenerateButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('Переделываю запрос');
   });
+  form.addEventListener('submit', (event) =>{
+    event.preventDefault();
+    console.log(event.target);
+  })
 };
 export default app;
