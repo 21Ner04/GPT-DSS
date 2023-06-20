@@ -135,6 +135,7 @@ const app = async () => {
     event.preventDefault();
     const output = document.querySelector('.hids-section');
     const div = document.createElement('div');
+    // eslint-disable-next-line no-shadow
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
     const { id } = activeChat;

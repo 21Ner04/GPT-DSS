@@ -298,4 +298,16 @@ select {
       flex-direction: column ;
       justify-content: center ;
       align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user-message {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .assistant-message {
+      display: flex;
+      justify-content: flex-start;
     }
