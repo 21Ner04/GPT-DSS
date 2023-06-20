@@ -22,4 +22,7 @@ export default class Messages {
   reset() {
     this.messages = [];
   }
+  generateId(id){
+    this.id = id;
+  }
 }

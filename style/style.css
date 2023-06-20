@@ -40,6 +40,7 @@
         height: 100vh;
         text-align: center;
         width: 100%;
+        overflow-x: auto;
     }
 
     .bottom-section {
@@ -277,5 +278,3 @@ select {
   .custom-scrollbar:hover {
     overflow-y: auto; /* Включить вертикальную прокрутку при наведении */
   }
-
-  

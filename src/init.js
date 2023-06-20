@@ -1,5 +1,7 @@
 import i18next from 'i18next';
 
+import _ from 'lodash';
+
 import Messages from './components/Messages.js';
 
 import { sendMessage } from './server.js';
@@ -17,6 +19,7 @@ import ruImage from '../assets/images/favicon-ru-32x32.png';
 const app = async () => {
   const state = {
     lang: 'en',
+    history: [],
   };
 
   const i18nextInstance = i18next.createInstance();
@@ -29,8 +32,6 @@ const app = async () => {
   };
 
   const { body } = document;
-  // eslint-disable-next-line no-unused-vars
-  const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
   const trash = document.querySelector('.trash');
   const list = document.querySelector('.chat-list');
@@ -100,8 +101,7 @@ const app = async () => {
     trash.textContent = i18nextInstance.t('trash');
   });
   // ---------------------------------------------------------------
-  // eslint-disable-next-line no-unused-vars
-  trash.addEventListener('click', (event) => {
+  trash.addEventListener('click', () => {
     list.innerHTML = '';
   });
   submitButton.addEventListener('click', () => {
@@ -117,8 +117,10 @@ const app = async () => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
+    const id = _.uniqueId()
     a.textContent = i18nextInstance.t('addChat');
     ol.classList.add('btn', 'no-marker', 'active-chat');
+    ol.id = id;
     li.classList.add('list-item');
     li.appendChild(a);
     ol.appendChild(li);
@@ -128,9 +130,26 @@ const app = async () => {
   // eslint-disable-next-line no-alert
     alert('Переделываю запрос');
   });
-  form.addEventListener('submit', (event) =>{
+  form.addEventListener('submit', async (event) =>{
     event.preventDefault();
-    console.log(event.target);
+    const output = document.querySelector('#output');
+    const div = document.createElement('div');
+    const p = document.createElement('p');
+    const activeChat = document.querySelector('.active-chat');
+    const id = activeChat.id;
+    const messages = new Messages();
+    const formData = new FormData(event.target);
+    const object = Object.fromEntries(formData)
+    div.classList.add('user-message');
+    div.textContent = object.input;
+    messages.generateId(id);
+    messages.add('user', object.input);
+    const send = await sendMessage(messages, object.input);
+    messages.add('assistant', send)
+    p.textContent = send;
+    p.classList.add('assistant-message');
+    output.appendChild(div)
+    output.appendChild(p)
   })
 };
 export default app;
