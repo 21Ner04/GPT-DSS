@@ -110,14 +110,14 @@ const app = async () => {
   });
   addButton.addEventListener('click', () => {
     const olAll = document.querySelectorAll('ol');
-    olAll.forEach((ol) =>{
+    olAll.forEach((ol) => {
       ol.classList.remove('active-chat');
-    })
+    });
     const div = document.querySelector('.chat-list');
     const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
-    const id = _.uniqueId()
+    const id = _.uniqueId();
     a.textContent = i18nextInstance.t('addChat');
     ol.classList.add('btn', 'no-marker', 'active-chat');
     ol.id = id;
@@ -130,26 +130,26 @@ const app = async () => {
   // eslint-disable-next-line no-alert
     alert('Переделываю запрос');
   });
-  form.addEventListener('submit', async (event) =>{
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const output = document.querySelector('#output');
     const div = document.createElement('div');
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
-    const id = activeChat.id;
+    const { id } = activeChat;
     const messages = new Messages();
     const formData = new FormData(event.target);
-    const object = Object.fromEntries(formData)
+    const object = Object.fromEntries(formData);
     div.classList.add('user-message');
     div.textContent = object.input;
     messages.generateId(id);
     messages.add('user', object.input);
     const send = await sendMessage(messages, object.input);
-    messages.add('assistant', send)
+    messages.add('assistant', send);
     p.textContent = send;
     p.classList.add('assistant-message');
-    output.appendChild(div)
-    output.appendChild(p)
-  })
+    output.appendChild(div);
+    output.appendChild(p);
+  });
 };
 export default app;
