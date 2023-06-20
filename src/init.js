@@ -32,6 +32,7 @@ const app = async () => {
   };
 
   const { body } = document;
+  const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
   const trash = document.querySelector('.trash');
   const list = document.querySelector('.chat-list');
@@ -150,6 +151,8 @@ const app = async () => {
     p.classList.add('assistant-message');
     output.appendChild(div);
     output.appendChild(p);
+    form.reset();
+    input.focus();
   });
 };
 export default app;

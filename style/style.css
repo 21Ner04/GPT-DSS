@@ -263,3 +263,30 @@ select {
   .custom-scrollbar:hover {
     overflow-y: auto; /* Включить вертикальную прокрутку при наведении */
   }
+
+  .custom-scr0llbar {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .custom-scr0llbar::-webkit-scrollbar {
+    height: 12px; 
+    width: 12px;
+  }
+
+  .custom-scr0llbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+  .custom-scr0llbar::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-scr0llbar:hover {
+    overflow-y: auto;
+  }
