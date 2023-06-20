@@ -152,6 +152,7 @@ const app = async () => {
     p.classList.add('assistant-message');
     output.appendChild(div);
     output.appendChild(p);
+    title.remove();
     form.reset();
     input.focus();
   });
