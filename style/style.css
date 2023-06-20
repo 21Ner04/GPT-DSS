@@ -265,28 +265,37 @@ select {
   }
 
   .custom-scr0llbar {
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: nowrap; /* Запрет переноса строк */
+    overflow: hidden
   }
-
+  
   .custom-scr0llbar::-webkit-scrollbar {
-    height: 12px; 
+    height: 12px; /* Высота скроллбара */
     width: 12px;
   }
-
+  
   .custom-scr0llbar::-webkit-scrollbar-thumb {
     background-color: #888;
-    border-radius: 6px;
+    /*Цветползункаскроллбара*/border-radius: 6px;
+     /* Скругление углов ползунка п*/  
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
 }
-
+  
   .custom-scr0llbar::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2); /* Цвет трека скроллбара */
   }
 
   .custom-scr0llbar:hover {
-    overflow-y: auto;
+    overflow-y: auto; /* Включить вертикальную прокрутку при наведении */
   }
+
+  .hids-section {
+    width: 100%;  
+      display: flex;
+      flex-direction: column ;
+      justify-content: center ;
+      align-items: center;
+    }
