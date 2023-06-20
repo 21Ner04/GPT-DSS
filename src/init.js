@@ -133,7 +133,7 @@ const app = async () => {
   });
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const output = document.querySelector('#output');
+    const output = document.querySelector('.hids-section');
     const div = document.createElement('div');
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
@@ -149,6 +149,7 @@ const app = async () => {
     messages.add('assistant', send);
     p.textContent = send;
     p.classList.add('assistant-message');
+    output.innerHTML = '';
     output.appendChild(div);
     output.appendChild(p);
     form.reset();
