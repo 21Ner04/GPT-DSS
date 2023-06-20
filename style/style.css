@@ -58,6 +58,7 @@
     }
 
     textarea {
+        max-height: 170px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -66,7 +67,7 @@
         border: none;
         background-color: rgba( 255, 255, 255, 0.05);
         width: 800px; /* меняет ширину */
-        height: 20px;
+        height: 24px;
         resize: none;
         overflow: auto;  /* убирает ползунок прокрутки */
         font-size: 20px;

@@ -56,10 +56,10 @@
           <div class="input-button-container">
         <textarea placeholder="Send a message" cols="110" rows="0" name="input" oninput="autoResize(this)"> </textarea>
         <script>
-          function autoResize(textarea) {
-            textarea.style.height = 'auto'; // Сначала сбросим высоту textarea до автоматической
-            textarea.style.height = textarea.scrollHeight + 'px'; // Установим новую высоту, равную высоте содержимого
-          }
+function autoResize(textarea) {
+  textarea.style.height = '24px';
+  textarea.style.height = textarea.scrollHeight + 'px'; // Установим новую высоту, равную высоте содержимого
+}
         </script>
           <div id="answer" class="hidden">  <!--   Код для отображения ответа  - работает ли>? если что удалить и в html и css --></div>
         <button class="btn-submit">➤</button>
