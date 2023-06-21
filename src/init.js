@@ -13,7 +13,6 @@ import enImage from '../assets/images/favicon-e-32x32.png';
 import ruImage from '../assets/images/favicon-ru-32x32.png';
 
 const app = async () => {
-
   const state = {
     lang: 'en',
     history: [],
@@ -24,56 +23,65 @@ const app = async () => {
     lng: state.lang,
     resources,
   });
-//-------------------------------------------------------------------------------------------------
-const finderMessage = (id) =>{
-  const result = state.history.find((message) => message.id === id);
-  return result;
-}
-//-------------------------------------------------------------------------------------------------
-  const submitForm = async (value) =>{
-    if(list.children.length === 0){
+  // eslint-disable-next-line max-len
+  //-------------------------------------------------------------------------------------------------
+  const finderMessage = (id) => {
+    const result = state.history.find((message) => message.id === id);
+    return result;
+  };
+  // eslint-disable-next-line max-len
+  //-------------------------------------------------------------------------------------------------
+  const submitForm = async (value) => {
+    // eslint-disable-next-line no-use-before-define
+    if (list.children.length === 0) {
+      // eslint-disable-next-line no-use-before-define
       renderChats(list, value);
     }
     const output = document.querySelector('#output');
     const div = document.createElement('div');
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
-    if(activeChat.textContent === 'New Chat' || activeChat.textContent === 'Новый чат'){
+    if (activeChat.textContent === 'New Chat' || activeChat.textContent === 'Новый чат') {
       const activeElement = activeChat.querySelector('li > a');
       activeElement.textContent = value;
     }
     const { id } = activeChat;
-    if(finderMessage(id) === undefined){
-    const messages = new Messages();
-    messages.add('user', value);
-    const send = await sendMessage(messages, value);
-    messages.generateId(id);
-    messages.add('assistant', send);
-    p.textContent = send;
-    state.history.push(messages);
-  }else{
-    const messageFindById = finderMessage(id);
-    messageFindById.add('user', value);
-    const send2 = await sendMessage(messageFindById, value);
-    messageFindById.add('assistant', send2);
-    p.textContent = send2;
-  }
-  div.textContent = value;
-  div.classList.add('user-message');
-  p.classList.add('assistant-message');
-  output.appendChild(div);
-  output.appendChild(p);
-  title.remove();
-  form.reset();
-  input.focus();
-  }
-//-------------------------------------------------------------------------------------------------
+    if (finderMessage(id) === undefined) {
+      const messages = new Messages();
+      messages.add('user', value);
+      const send = await sendMessage(messages, value);
+      messages.generateId(id);
+      messages.add('assistant', send);
+      p.textContent = send;
+      state.history.push(messages);
+    } else {
+      const messageFindById = finderMessage(id);
+      messageFindById.add('user', value);
+      const send2 = await sendMessage(messageFindById, value);
+      messageFindById.add('assistant', send2);
+      p.textContent = send2;
+    }
+    div.textContent = value;
+    div.classList.add('user-message');
+    p.classList.add('assistant-message');
+    output.appendChild(div);
+    output.appendChild(p);
+    // eslint-disable-next-line no-use-before-define
+    title.remove();
+    // eslint-disable-next-line no-use-before-define
+    form.reset();
+    // eslint-disable-next-line no-use-before-define
+    input.focus();
+  };
+  // eslint-disable-next-line max-len
+  //-------------------------------------------------------------------------------------------------
 
   const changeLang = async (lang) => {
     await i18nextInstance.changeLanguage(lang);
   };
-//-------------------------------------------------------------------------------------------------
-  const renderChats = (list,name = null) =>{
+  // eslint-disable-next-line max-len
+  //-------------------------------------------------------------------------------------------------
+  const renderChats = (list, name = null) => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -85,8 +93,9 @@ const finderMessage = (id) =>{
     li.appendChild(a);
     ol.appendChild(li);
     list.prepend(ol);
-  }
-//-------------------------------------------------------------------------------------------------
+  };
+  // eslint-disable-next-line max-len
+  //-------------------------------------------------------------------------------------------------
   const { body } = document;
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -161,13 +170,13 @@ const finderMessage = (id) =>{
     list.innerHTML = '';
   });
 
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
   submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('я отправляю запрос');
   });
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
   addButton.addEventListener('click', () => {
     const olAll = document.querySelectorAll('ol');
@@ -177,14 +186,14 @@ const finderMessage = (id) =>{
     renderChats(list);
   });
 
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
   regenerateButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('Переделываю запрос');
   });
-    // ---------------------------------------------------------------
-    
+  // ---------------------------------------------------------------
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -192,15 +201,15 @@ const finderMessage = (id) =>{
     submitForm(object.input);
   });
 
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
-  input.addEventListener('keydown', (event) =>{
-    if(event.key === 'Enter'){
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
       event.preventDefault();
-      submitForm(event.target.value); 
+      submitForm(event.target.value);
     }
-  })
-  
+  });
+
   form.reset();
   input.focus();
 };
