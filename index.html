@@ -4,6 +4,7 @@
     <title>ChatGPT</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css"/>
+     <!-- Фавикон -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -12,10 +13,11 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    
+    <!-- Масштабирование -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   </head>
 <body class="body-black">
+   <!-- Боковое меню -->
   <section class="side-var">
     <nav class="history custom-scrollbar">
       <div class="btn add-chat">
@@ -27,6 +29,7 @@
     <div class="chat-list">
     </div>
     </nav>
+    <!-- Дополнительные кнопки -->
     <div class="btn-more">
       <p><button class="trash">🗑 Clear conversations</button></p>
       <p> <button class="theme dark-mode" name="themeDark">☼ Light mode</button></p>
@@ -34,15 +37,18 @@
       <p id="inf">Made DSS</p>
       </div>
 </section>
+ <!-- Основной блок -->
 <section class="main">
   <div class="main custom-scr0llbar">
   <h1>ChatGPT by DSS</h1>
   <div id="output">
   </div>
   </div>
+  <!-- Нижняя часть основного блока -->
   <div class="bottom-section">
       <div class="input-container">
         <form>
+          <!-- Кнопки и выбор версии GPT -->
           <div class="button-container">
             <button class="btn response">
               Regenerate response
@@ -54,6 +60,7 @@
               
             </select>
           </div>
+           <!-- Поле ввода и кнопка отправки -->
           <div class="input-button-container">
         <textarea placeholder="Send a message" cols="110" rows="0" name="input" oninput="autoResize(this)"> </textarea>
         <script>
@@ -62,6 +69,7 @@ function autoResize(textarea) {
   textarea.style.height = textarea.scrollHeight + 'px'; // Установим новую высоту, равную высоте содержимого -->
 }
         </script>
+        <!-- Код для отображения ответа -->
           <div id="answer" class="hidden">  <!--   Код для отображения ответа  - работает ли>? если что удалить и в html и css --></div>
         <button class="btn-submit">➤</button>
         </div>
