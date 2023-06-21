@@ -57,7 +57,7 @@ const app = async () => {
     const li = document.createElement('li');
     const a = document.createElement('a');
     const id = _.uniqueId();
-    const myName = name.trim().length >= 22 && name !== null ? name.trim().slice(0, 22) + '...' : name; 
+    const myName = name.trim().length >= 22 && name !== null ? `${name.trim().slice(0, 22)}...` : name;
     a.textContent = name === '' ? i18nextInstance.t('addChat') : myName;
     ol.classList.add('btn', 'no-marker', 'active-chat');
     ol.id = id;
@@ -79,7 +79,7 @@ const app = async () => {
     const activeChat = document.querySelector('.active-chat');
     const activeElement = activeChat.querySelector('li > a');
     if (activeElement.textContent === 'New Chat' || activeElement.textContent === 'Новый чат') {
-      const myValue = value.trim().length >= 22 ? value.trim().slice(0, 22) + '...' : value.trim();
+      const myValue = value.trim().length >= 22 ? `${value.trim().slice(0, 22)}...` : value.trim();
       activeElement.textContent = myValue.trim();
     }
     const { id } = activeChat;
