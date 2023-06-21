@@ -238,8 +238,8 @@ select {
   }
 
   .list-item {
-    justify-content: center;
-    text-align: center;
+    justify-content: left;
+    text-align: left;
   }
 
   .custom-scrollbar {
