@@ -99,13 +99,13 @@ const finderMessage = (id) =>{
   const regenerateButton = document.querySelector('.response');
   const languageButton = document.querySelector('.theme-toggle');
   const form = document.querySelector('form');
-  languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
+  const toggle = document.querySelector('.theme');
+  const language = document.querySelector('.theme-toggle');
 
+  languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
   // ----------------------------------------------------------------------------------------------
 
   // dark - light mode knopka
-  const toggle = document.querySelector('.theme');
-  toggle.name = 'themeDark';
   toggle.addEventListener('click', (event) => {
     const elementSection = document.querySelector('.main').querySelectorAll('*');
     const myEvent = event;
@@ -136,7 +136,6 @@ const finderMessage = (id) =>{
   // ----------------------------------------------------------------------------------------------
 
   // re - e flag knopka
-  const language = document.querySelector('.theme-toggle');
   language.addEventListener('click', (event) => {
     const myEvent = event;
     if (state.lang === 'en') {
@@ -161,10 +160,15 @@ const finderMessage = (id) =>{
   trash.addEventListener('click', () => {
     list.innerHTML = '';
   });
+
+    // ---------------------------------------------------------------
+
   submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('я отправляю запрос');
   });
+    // ---------------------------------------------------------------
+
   addButton.addEventListener('click', () => {
     const olAll = document.querySelectorAll('ol');
     olAll.forEach((ol) => {
@@ -172,22 +176,31 @@ const finderMessage = (id) =>{
     });
     renderChats(list);
   });
+
+    // ---------------------------------------------------------------
+
   regenerateButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('Переделываю запрос');
   });
+    // ---------------------------------------------------------------
+    
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const object = Object.fromEntries(formData);
     submitForm(object.input);
   });
+
+    // ---------------------------------------------------------------
+
   input.addEventListener('keydown', (event) =>{
     if(event.key === 'Enter'){
       event.preventDefault();
       submitForm(event.target.value); 
     }
   })
+  
   form.reset();
   input.focus();
 };
