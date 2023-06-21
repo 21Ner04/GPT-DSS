@@ -13,7 +13,6 @@ import enImage from '../assets/images/favicon-e-32x32.png';
 import ruImage from '../assets/images/favicon-ru-32x32.png';
 
 const app = async () => {
-
   const state = {
     lang: 'en',
     history: [],
@@ -24,69 +23,7 @@ const app = async () => {
     lng: state.lang,
     resources,
   });
-//-------------------------------------------------------------------------------------------------
-const finderMessage = (id) =>{
-  const result = state.history.find((message) => message.id === id);
-  return result;
-}
-//-------------------------------------------------------------------------------------------------
-  const submitForm = async (value) =>{
-    if(list.children.length === 0){
-      renderChats(list, value);
-    }
-    const output = document.querySelector('#output');
-    const div = document.createElement('div');
-    const p = document.createElement('p');
-    const activeChat = document.querySelector('.active-chat');
-    if(activeChat.textContent === 'New Chat' || activeChat.textContent === 'Новый чат'){
-      const activeElement = activeChat.querySelector('li > a');
-      activeElement.textContent = value;
-    }
-    const { id } = activeChat;
-    if(finderMessage(id) === undefined){
-    const messages = new Messages();
-    messages.add('user', value);
-    const send = await sendMessage(messages, value);
-    messages.generateId(id);
-    messages.add('assistant', send);
-    p.textContent = send;
-    state.history.push(messages);
-  }else{
-    const messageFindById = finderMessage(id);
-    messageFindById.add('user', value);
-    const send2 = await sendMessage(messageFindById, value);
-    messageFindById.add('assistant', send2);
-    p.textContent = send2;
-  }
-  div.textContent = value;
-  div.classList.add('user-message');
-  p.classList.add('assistant-message');
-  output.appendChild(div);
-  output.appendChild(p);
-  title.remove();
-  form.reset();
-  input.focus();
-  }
-//-------------------------------------------------------------------------------------------------
 
-  const changeLang = async (lang) => {
-    await i18nextInstance.changeLanguage(lang);
-  };
-//-------------------------------------------------------------------------------------------------
-  const renderChats = (list,name = null) =>{
-    const ol = document.createElement('ol');
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const id = _.uniqueId();
-    a.textContent = name === null ? i18nextInstance.t('addChat') : name;
-    ol.classList.add('btn', 'no-marker', 'active-chat');
-    ol.id = id;
-    li.classList.add('list-item');
-    li.appendChild(a);
-    ol.appendChild(li);
-    list.prepend(ol);
-  }
-//-------------------------------------------------------------------------------------------------
   const { body } = document;
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -103,7 +40,69 @@ const finderMessage = (id) =>{
   const language = document.querySelector('.theme-toggle');
 
   languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
-  // ----------------------------------------------------------------------------------------------
+
+  //-------------------------------------------------------------------------------------------------
+  const finderMessage = (id) => {
+    const result = state.history.find((message) => message.id === id);
+    return result;
+  };
+  //-------------------------------------------------------------------------------------------------
+  const renderChats = (list, name = null) => {
+    const ol = document.createElement('ol');
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    const id = _.uniqueId();
+    a.textContent = name === null ? i18nextInstance.t('addChat') : name;
+    ol.classList.add('btn', 'no-marker', 'active-chat');
+    ol.id = id;
+    li.classList.add('list-item');
+    li.appendChild(a);
+    ol.appendChild(li);
+    list.prepend(ol);
+  };
+    // ----------------------------------------------------------------------------------------------
+  const submitForm = async (value) => {
+    if (list.children.length === 0) {
+      renderChats(list, value);
+    }
+    const output = document.querySelector('#output');
+    const div = document.createElement('div');
+    const p = document.createElement('p');
+    const activeChat = document.querySelector('.active-chat');
+    if (activeChat.textContent === 'New Chat' || activeChat.textContent === 'Новый чат') {
+      const activeElement = activeChat.querySelector('li > a');
+      activeElement.textContent = value;
+    }
+    const { id } = activeChat;
+    if (finderMessage(id) === undefined) {
+      const messages = new Messages();
+      messages.add('user', value);
+      const send = await sendMessage(messages, value);
+      messages.generateId(id);
+      messages.add('assistant', send);
+      p.textContent = send;
+      state.history.push(messages);
+    } else {
+      const messageFindById = finderMessage(id);
+      messageFindById.add('user', value);
+      const send2 = await sendMessage(messageFindById, value);
+      messageFindById.add('assistant', send2);
+      p.textContent = send2;
+    }
+    div.textContent = value;
+    div.classList.add('user-message');
+    p.classList.add('assistant-message');
+    output.appendChild(div);
+    output.appendChild(p);
+    title.remove();
+    form.reset();
+    input.focus();
+  };
+  //-------------------------------------------------------------------------------------------------
+
+  const changeLang = async (lang) => {
+    await i18nextInstance.changeLanguage(lang);
+  };
 
   // dark - light mode knopka
   toggle.addEventListener('click', (event) => {
@@ -161,13 +160,13 @@ const finderMessage = (id) =>{
     list.innerHTML = '';
   });
 
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
   submitButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('я отправляю запрос');
   });
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
   addButton.addEventListener('click', () => {
     const olAll = document.querySelectorAll('ol');
@@ -177,14 +176,14 @@ const finderMessage = (id) =>{
     renderChats(list);
   });
 
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
   regenerateButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
     alert('Переделываю запрос');
   });
-    // ---------------------------------------------------------------
-    
+  // ---------------------------------------------------------------
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -192,15 +191,15 @@ const finderMessage = (id) =>{
     submitForm(object.input);
   });
 
-    // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
 
-  input.addEventListener('keydown', (event) =>{
-    if(event.key === 'Enter'){
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
       event.preventDefault();
-      submitForm(event.target.value); 
+      submitForm(event.target.value);
     }
-  })
-  
+  });
+
   form.reset();
   input.focus();
 };
