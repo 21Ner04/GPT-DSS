@@ -8,16 +8,28 @@ import { sendMessage } from './server.js';
 
 import resources from './locales/index.js';
 
-import '../assets/favicon/favicon-16x16.png';
-
-import '../assets/favicon/favicon-32x32.png';
-
 import enImage from '../assets/images/favicon-e-32x32.png';
 
 import ruImage from '../assets/images/favicon-ru-32x32.png';
 
 const app = async () => {
 
+  const state = {
+    lang: 'en',
+    history: [],
+  };
+
+  const i18nextInstance = i18next.createInstance();
+  await i18nextInstance.init({
+    lng: state.lang,
+    resources,
+  });
+//-------------------------------------------------------------------------------------------------
+const finderMessage = (id) =>{
+  const result = state.history.find((message) => message.id === id);
+  return result;
+}
+//-------------------------------------------------------------------------------------------------
   const submitForm = async (value) =>{
     if(list.children.length === 0){
       renderChats(list, value);
@@ -31,26 +43,36 @@ const app = async () => {
       activeElement.textContent = value;
     }
     const { id } = activeChat;
+    if(finderMessage(id) === undefined){
     const messages = new Messages();
-    div.classList.add('user-message');
-    div.textContent = value;
-    messages.generateId(id);
     messages.add('user', value);
     const send = await sendMessage(messages, value);
+    messages.generateId(id);
     messages.add('assistant', send);
     p.textContent = send;
-    p.classList.add('assistant-message');
-    output.appendChild(div);
-    output.appendChild(p);
-    title.remove();
-    form.reset();
-    input.focus();
+    state.history.push(messages);
+  }else{
+    const messageFindById = finderMessage(id);
+    messageFindById.add('user', value);
+    const send2 = await sendMessage(messageFindById, value);
+    messageFindById.add('assistant', send2);
+    p.textContent = send2;
   }
+  div.textContent = value;
+  div.classList.add('user-message');
+  p.classList.add('assistant-message');
+  output.appendChild(div);
+  output.appendChild(p);
+  title.remove();
+  form.reset();
+  input.focus();
+  }
+//-------------------------------------------------------------------------------------------------
 
   const changeLang = async (lang) => {
     await i18nextInstance.changeLanguage(lang);
   };
-
+//-------------------------------------------------------------------------------------------------
   const renderChats = (list,name = null) =>{
     const ol = document.createElement('ol');
     const li = document.createElement('li');
@@ -64,17 +86,6 @@ const app = async () => {
     ol.appendChild(li);
     list.prepend(ol);
   }
-//-------------------------------------------------------------------------------------------------
-  const state = {
-    lang: 'en',
-    history: [],
-  };
-
-  const i18nextInstance = i18next.createInstance();
-  await i18nextInstance.init({
-    lng: state.lang,
-    resources,
-  });
 //-------------------------------------------------------------------------------------------------
   const { body } = document;
   const input = document.querySelector('textarea');

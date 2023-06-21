@@ -1,6 +1,6 @@
 export default class Messages {
   constructor() {
-    this.messages = [{ role: 'system', content: 'You-user' }];
+    this.messages = [];
   }
 
   add(role, content) {

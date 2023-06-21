@@ -8,8 +8,7 @@ const tester = () => {
   return response + 1;
 };
 
-async function sendMessage(messages, message) {
-  messages.add('user', message);
+async function sendMessage(messages) {
   const data = {
     model: 'gpt-3.5-turbo',
     messages: messages.getItems(),
@@ -26,7 +25,6 @@ async function sendMessage(messages, message) {
   try {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', data, config);
     const responseData = response.data.choices[0];
-    messages.add('assistant', responseData.message.content);
     return responseData.message.content;
   } catch (error) {
     console.error(error);
