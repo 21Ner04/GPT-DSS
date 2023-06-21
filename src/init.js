@@ -31,6 +31,20 @@ const app = async () => {
     await i18nextInstance.changeLanguage(lang);
   };
 
+  const renderChats = (list,name = null) =>{
+    const ol = document.createElement('ol');
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    const id = _.uniqueId();
+    a.textContent = name === null ? i18nextInstance.t('addChat') : name;
+    ol.classList.add('btn', 'no-marker', 'active-chat');
+    ol.id = id;
+    li.classList.add('list-item');
+    li.appendChild(a);
+    ol.appendChild(li);
+    list.prepend(ol);
+  }
+
   const { body } = document;
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -114,18 +128,7 @@ const app = async () => {
     olAll.forEach((ol) => {
       ol.classList.remove('active-chat');
     });
-    const div = document.querySelector('.chat-list');
-    const ol = document.createElement('ol');
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const id = _.uniqueId();
-    a.textContent = i18nextInstance.t('addChat');
-    ol.classList.add('btn', 'no-marker', 'active-chat');
-    ol.id = id;
-    li.classList.add('list-item');
-    li.appendChild(a);
-    ol.appendChild(li);
-    div.prepend(ol);
+    renderChats(list);
   });
   regenerateButton.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
@@ -133,15 +136,17 @@ const app = async () => {
   });
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    const formData = new FormData(event.target);
+    const object = Object.fromEntries(formData);
+    if(list.children.length === 0){
+      renderChats(list, object.input);
+    }
     const output = document.querySelector('#output');
     const div = document.createElement('div');
-    // eslint-disable-next-line no-shadow
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
     const { id } = activeChat;
     const messages = new Messages();
-    const formData = new FormData(event.target);
-    const object = Object.fromEntries(formData);
     div.classList.add('user-message');
     div.textContent = object.input;
     messages.generateId(id);
