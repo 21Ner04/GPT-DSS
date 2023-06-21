@@ -1,7 +1,11 @@
+/* Импорт шрифта Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    /* Установка цвета текста для всех элементов */
     * {
  color: white;
 } 
+
+/* Стили для темного фона */
     .body-black{
       margin: 0;
       padding: 0;
@@ -9,6 +13,7 @@
       display: flex;
     }
 
+/* Стили для темного фона */
     .body-white {
       margin: 0;
       padding: 0;
@@ -16,12 +21,14 @@
       display: flex;
     }
 
+/* Стили для заголовка */
     h1 {
     font-size: 20px;
     font-weight: 600;
     padding: 350px 0;
 }
  
+/* Стили для боковой панели */
     .side-var {
       background-color: #18191b;
       width: 250px;
@@ -32,6 +39,7 @@
       flex-shrink: 0;
     }
 
+     /* Стили для основного контента */
     .main {
         display: flex;
         flex-direction: column;
@@ -41,8 +49,11 @@
         text-align: center;
         width: 100%;
         overflow-x: auto;
+        max-width: 100%; 
+        overflow-x: hidden;  
     }
 
+     /* Стили для нижней секции */
     .bottom-section {
       width: 100%;  
       display: flex;
@@ -51,12 +62,14 @@
       justify-content: center ;
     }
 
+     /* Стили для информационного текста */
     .info {
         color:rgba( 255, 255, 255, 0.5);
         font-size: 11px;
         padding: 5px;
     }
 
+    /* Стили для области ввода текста */
     textarea {
         max-height: 170px;
         display: flex;
@@ -80,47 +93,56 @@
         -o-border-radius: 15px;
         box-shadow: rgba( 0, 0, 0, 0.05) 0 54px 55px,        rgba( 0, 0, 0, 0.05) 0 -12px 30px        rgba( 0, 0, 0, 0.05) 0 4px 5px,        rgba( 0, 0, 0, 0.05) 0 12px 3px,        rgba( 0, 0, 0, 0.05) 0 -3px 5px,    ;
 }
+/* Стили для ползунка прокрутки области ввода текста */
     textarea::-webkit-scrollbar-thumb {
         background-color: transparent; /* Цвет ползунка скроллбара */
     }
 
+ /* Стили для фона полосы прокрутки области ввода текста */
     textarea::-webkit-scrollbar {
         background-color: transparent; /* Прозрачный фон скроллбара */
     }
 
+     /* Убрать контур при фокусе на области ввода текста */
     textarea:focus {
         outline: none;
     }
     
+     /* Стили для кнопки "Показать больше" */
     .btn-more {
         align-items: flex-start;
         color:rgba( 255, 255, 255, 0.5);
     }
 
+     /* Стили для кнопки смены темы */
     .theme {
         background: none;
         border: none;
         cursor: pointer;
       }
 
+      /* Стили для кнопки переключения темы */
     .theme-toggle {
         background: none;
         border: none;
         cursor: pointer;
     }
 
+    /* Стили для корзины */
     .trash {
       background: none;
       border: none;
       cursor: pointer;
     }
 
+     /* Стили для контейнера с инпутом */
     .input-countainer {
         position: relative;
         width: 100%;
         max-width: 650px;
     }
 
+   /* Стили для кнопки отправки */
     .btn-submit {
         border: solid 0px rgba(223, 215, 215, 0.5);
         background-color: transparent;
@@ -132,6 +154,7 @@
         color: rgb(78, 65, 65);
     }
     
+     /* Общие стили для кнопок */
     .btn {
         border: solid 0.5px rgba( 255, 255, 255, 0.5);
         border-radius: 5px;
@@ -147,6 +170,8 @@
         border-radius: 4px;
         background-color: transparent;
 }
+
+/* Стили для активной кнопки */
     .active {
         background-color: rgb(25, 195, 125);
         cursor: pointer;
@@ -157,12 +182,14 @@
         width: 8%;
     }
 
+    /* Стили для навигации */
 nav {
 border-bottom: solid 0.5px rgba( 255, 255, 255, 0.5);
 padding: 10px;
 margin: 10px;
 }
 
+/* Стили для истории сообщений */
 .history {
     padding: 10px;
     margin: 10px;
@@ -174,13 +201,24 @@ margin: 10px;
 .history p {
     cursor: pointer;
 }
+.hids-section {
+  width: 100%;  
+    display: flex;
+    flex-direction: column ;
+    justify-content: center ;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 
+ /* Стили для скрытого элемента */
 .hidden {
     opacity: 0;
     display: none;
     transition: opacity 0.5s ease-in-out;  /*  Код для отображения ответа  - работает ли>? если что удалить и в html и css */
   }
 
+  /* Стили для списка выбора */
 select {
     padding: 10px;
     font-size: 16px;
@@ -193,6 +231,7 @@ select {
     -o-border-radius: 5px;
 }
   
+ /* Стили для опции выбора */
   option {
     color: black;
     background-color: transparent;
@@ -215,6 +254,7 @@ select {
     background-color: transparent;
   }
   
+  /* Стили для списка без маркеров */
   .no-marker {
     list-style-type: none;
     cursor: pointer;
@@ -224,6 +264,7 @@ select {
     background-color: #808080;
   }
   
+  /* Стили для кнопки добавления чата */
   .add-chat {
     text-align: center;
     border-style: dotted;
@@ -233,15 +274,18 @@ select {
     background-color: #808080;
   }
 
+   /* Стили для активного чата */
   .active-chat {
     background-color: #808080;
   }
 
+   /* Стили для элементов списка */
   .list-item {
     justify-content: left;
     text-align: left;
   }
 
+   /* Стили для кастомного скроллбара */
   .custom-scrollbar {
     white-space: nowrap; /* Запрет переноса строк */
     overflow: hidden
@@ -293,12 +337,20 @@ select {
     overflow-y: auto; /* Включить вертикальную прокрутку при наведении */
   }
   
-    .user-message {
-      display: flex;
-      justify-content: flex-end;
-    }
-    
-    .assistant-message {
-      display: flex;
-      justify-content: flex-start;
-    }
+.user-message {
+    padding: 25px 10px;
+    background: #4b4ba0;
+    border-radius: 5px;
+    word-wrap: break-word;
+    position: relative;
+    max-width: 100%
+  }
+
+  .assistant-message {
+    padding: 25px 10px;
+    background: #373776;
+    border-radius: 5px;
+    word-wrap: break-word;
+    position: relative;
+    max-width: 100%
+  }
