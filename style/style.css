@@ -148,9 +148,9 @@
         background-color: transparent;
 }
     .active {
-        background-color: green;
+        background-color: rgb(25, 195, 125);
         cursor: pointer;
-        border: solid 0px green;
+        border: solid 0px rgb(25, 195, 125);
         position: relative;
         bottom: 33px;
         left: 160px;

@@ -17,16 +17,36 @@ import enImage from '../assets/images/favicon-e-32x32.png';
 import ruImage from '../assets/images/favicon-ru-32x32.png';
 
 const app = async () => {
-  const state = {
-    lang: 'en',
-    history: [],
-  };
 
-  const i18nextInstance = i18next.createInstance();
-  await i18nextInstance.init({
-    lng: state.lang,
-    resources,
-  });
+  const submitForm = async (value) =>{
+    if(list.children.length === 0){
+      renderChats(list, value);
+    }
+    const output = document.querySelector('#output');
+    const div = document.createElement('div');
+    const p = document.createElement('p');
+    const activeChat = document.querySelector('.active-chat');
+    if(activeChat.textContent === 'New Chat' || activeChat.textContent === 'Новый чат'){
+      const activeElement = activeChat.querySelector('li > a');
+      activeElement.textContent = value;
+    }
+    const { id } = activeChat;
+    const messages = new Messages();
+    div.classList.add('user-message');
+    div.textContent = value;
+    messages.generateId(id);
+    messages.add('user', value);
+    const send = await sendMessage(messages, value);
+    messages.add('assistant', send);
+    p.textContent = send;
+    p.classList.add('assistant-message');
+    output.appendChild(div);
+    output.appendChild(p);
+    title.remove();
+    form.reset();
+    input.focus();
+  }
+
   const changeLang = async (lang) => {
     await i18nextInstance.changeLanguage(lang);
   };
@@ -44,7 +64,18 @@ const app = async () => {
     ol.appendChild(li);
     list.prepend(ol);
   }
+//-------------------------------------------------------------------------------------------------
+  const state = {
+    lang: 'en',
+    history: [],
+  };
 
+  const i18nextInstance = i18next.createInstance();
+  await i18nextInstance.init({
+    lng: state.lang,
+    resources,
+  });
+//-------------------------------------------------------------------------------------------------
   const { body } = document;
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -138,28 +169,15 @@ const app = async () => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const object = Object.fromEntries(formData);
-    if(list.children.length === 0){
-      renderChats(list, object.input);
-    }
-    const output = document.querySelector('#output');
-    const div = document.createElement('div');
-    const p = document.createElement('p');
-    const activeChat = document.querySelector('.active-chat');
-    const { id } = activeChat;
-    const messages = new Messages();
-    div.classList.add('user-message');
-    div.textContent = object.input;
-    messages.generateId(id);
-    messages.add('user', object.input);
-    const send = await sendMessage(messages, object.input);
-    messages.add('assistant', send);
-    p.textContent = send;
-    p.classList.add('assistant-message');
-    output.appendChild(div);
-    output.appendChild(p);
-    title.remove();
-    form.reset();
-    input.focus();
+    submitForm(object.input);
   });
+  input.addEventListener('keydown', (event) =>{
+    if(event.key === 'Enter'){
+      event.preventDefault();
+      submitForm(event.target.value); 
+    }
+  })
+  form.reset();
+  input.focus();
 };
 export default app;
