@@ -1,6 +1,5 @@
 // Импортируем библиотеку axios для работы с HTTP-запросами 
 import axios from 'axios'; 
-import axios from 'axios';
 // Функция tester, которая возвращает 1 больше нуля
 const tester = () => {
   const response = 0;
@@ -34,6 +33,7 @@ async function sendMessage(messages) {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', data, config);
      // Извлекаем текст ответа из данных ответа 
     const responseData = response.data.choices[0];
+
     return responseData.message.content;
     // Если произошла ошибка, выводим ее в консоль 
   } catch (error) {
