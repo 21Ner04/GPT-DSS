@@ -52,13 +52,13 @@ const app = async () => {
   // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
   // eslint-disable-next-line no-shadow
-  const renderChats = (list, name = null) => {
+  const renderChats = (list, name = '') => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
     const a = document.createElement('a');
     const id = _.uniqueId();
-    console.log(name);
-    a.textContent = name === null ? i18nextInstance.t('addChat') : name.trim().slice(0, 22) + '...';
+    const myName = name.trim().length >= 22 && name !== null ? name.trim().slice(0, 22) + '...' : name; 
+    a.textContent = name === '' ? i18nextInstance.t('addChat') : myName;
     ol.classList.add('btn', 'no-marker', 'active-chat');
     ol.id = id;
     li.classList.add('list-item');
@@ -79,7 +79,8 @@ const app = async () => {
     const activeChat = document.querySelector('.active-chat');
     const activeElement = activeChat.querySelector('li > a');
     if (activeElement.textContent === 'New Chat' || activeElement.textContent === 'Новый чат') {
-      activeElement.textContent = value.trim().slice(0, 22) + '...';
+      const myValue = value.trim().length >= 22 ? value.trim().slice(0, 22) + '...' : value.trim();
+      activeElement.textContent = myValue.trim();
     }
     const { id } = activeChat;
     const messages = finderMessage(id) === undefined ? new Messages() : finderMessage(id);
