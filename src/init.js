@@ -23,7 +23,8 @@ const app = async () => {
     lng: state.lang,
     resources,
   });
-
+  //-------------------------------------------------------------------------------------------------
+  
   const { body } = document;
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -74,21 +75,15 @@ const app = async () => {
       activeElement.textContent = value;
     }
     const { id } = activeChat;
-    if (finderMessage(id) === undefined) {
-      const messages = new Messages();
-      messages.add('user', value);
-      const send = await sendMessage(messages, value);
+    const messages = finderMessage(id) === undefined ? new Messages() : finderMessage(id);
+    if (messages.id === 'none') {
       messages.generateId(id);
-      messages.add('assistant', send);
-      p.textContent = send;
       state.history.push(messages);
-    } else {
-      const messageFindById = finderMessage(id);
-      messageFindById.add('user', value);
-      const send2 = await sendMessage(messageFindById, value);
-      messageFindById.add('assistant', send2);
-      p.textContent = send2;
     }
+    messages.add('user', value);
+    const send = await sendMessage(messages);
+    messages.add('assistant', send);
+    p.textContent = send
     div.textContent = value;
     div.classList.add('user-message');
     p.classList.add('assistant-message');
