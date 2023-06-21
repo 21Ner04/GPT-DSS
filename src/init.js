@@ -23,8 +23,9 @@ const app = async () => {
     lng: state.lang,
     resources,
   });
+  // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
-  
+
   const { body } = document;
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -42,12 +43,15 @@ const app = async () => {
 
   languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
 
+  // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
   const finderMessage = (id) => {
     const result = state.history.find((message) => message.id === id);
     return result;
   };
+  // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
+  // eslint-disable-next-line no-shadow
   const renderChats = (list, name = null) => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
@@ -61,6 +65,7 @@ const app = async () => {
     ol.appendChild(li);
     list.prepend(ol);
   };
+    // eslint-disable-next-line max-len
     // ----------------------------------------------------------------------------------------------
   const submitForm = async (value) => {
     if (list.children.length === 0) {
@@ -68,6 +73,7 @@ const app = async () => {
     }
     const output = document.querySelector('#output');
     const div = document.createElement('div');
+    // eslint-disable-next-line no-shadow
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
     if (activeChat.textContent === 'New Chat' || activeChat.textContent === 'Новый чат') {
@@ -83,7 +89,7 @@ const app = async () => {
     messages.add('user', value);
     const send = await sendMessage(messages);
     messages.add('assistant', send);
-    p.textContent = send
+    p.textContent = send;
     div.textContent = value;
     div.classList.add('user-message');
     p.classList.add('assistant-message');
@@ -93,6 +99,7 @@ const app = async () => {
     form.reset();
     input.focus();
   };
+  // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
 
   const changeLang = async (lang) => {

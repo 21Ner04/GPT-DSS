@@ -6,9 +6,10 @@ const tester = () => {
   return response + 1;
 };
 
+// eslint-disable-next-line consistent-return
 async function sendMessage(messages) {
   const API_KEY = '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';
-  
+
   const data = {
     model: 'gpt-3.5-turbo',
     messages: messages.getItems(),
@@ -28,6 +29,7 @@ async function sendMessage(messages) {
     const responseData = response.data.choices[0];
     return responseData.message.content;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
   }
 }
