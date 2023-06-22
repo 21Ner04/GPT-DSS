@@ -27,6 +27,7 @@ const app = async () => {
   //-------------------------------------------------------------------------------------------------
 
   const { body } = document;
+  const output = document.querySelector('#output');
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
   const trash = document.querySelector('.trash');
@@ -72,7 +73,6 @@ const app = async () => {
     if (list.children.length === 0) {
       renderChats(list, value);
     }
-    const output = document.querySelector('#output');
     const div = document.createElement('div');
     // eslint-disable-next-line no-shadow
     const p = document.createElement('p');
@@ -173,11 +173,13 @@ const app = async () => {
   // ---------------------------------------------------------------
 
   addButton.addEventListener('click', () => {
+    output.innerHTML = '';
     const olAll = document.querySelectorAll('ol');
     olAll.forEach((ol) => {
       ol.classList.remove('active-chat');
     });
     renderChats(list);
+    console.log(state.history);
   });
 
   // ---------------------------------------------------------------
