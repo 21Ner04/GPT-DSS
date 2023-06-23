@@ -16,6 +16,9 @@ const app = async () => {
   const state = {
     lang: 'en',
     history: [],
+    form:{
+      state: 'none',
+    },
   };
 
   const i18nextInstance = i18next.createInstance();
@@ -161,6 +164,7 @@ const app = async () => {
   // ---------------------------------------------------------------
   trash.addEventListener('click', () => {
     list.innerHTML = '';
+    state.history = [];
   });
 
   // ---------------------------------------------------------------
