@@ -110,11 +110,12 @@ const app = async () => {
 
   // dark - light mode knopka
   toggle.addEventListener('click', (event) => {
-    const elementSection = document.querySelector('.main').querySelectorAll('*');
+    const sectionMain = document.querySelector('.main')
+    const elementSection = sectionMain.querySelectorAll('*');
     const myEvent = event;
     if (myEvent.target.classList.contains('dark-mode')) {
-      body.classList.remove('body-black');
-      body.classList.add('body-white');
+      sectionMain.classList.remove('main-black');
+      sectionMain.classList.add('main-white');
       myEvent.target.classList.remove('dark-mode');
       myEvent.target.classList.add('light-mode');
       myEvent.target.name = 'themeDark';
@@ -126,8 +127,8 @@ const app = async () => {
     } else {
       myEvent.target.classList.remove('light-mode');
       myEvent.target.classList.add('dark-mode');
-      body.classList.remove('body-white');
-      body.classList.add('body-black');
+      sectionMain.classList.remove('main-white');
+      sectionMain.classList.add('main-black');
       myEvent.target.name = 'themeLight';
       myEvent.target.textContent = i18nextInstance.t('themeLight');
       elementSection.forEach((element) => {

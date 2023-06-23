@@ -5,23 +5,19 @@
  color: white;
 } 
 
-/* Стили для темного фона */
-    .body-black{
-      margin: 0;
-      padding: 0;
+body{ 
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+    .main-black{
       background-color: #091921;
-      display: flex;
     }
 
-/* Стили для темного фона */
-    .body-white {
-      margin: 0;
-      padding: 0;
+    .main-white {
       background-color: white;
-      display: flex;
     }
 
-/* Стили для заголовка */
     h1 {
     font-size: 20px;
     font-weight: 600;
@@ -30,7 +26,7 @@
  
 /* Стили для боковой панели */
     .side-var {
-      background-color: #122b167d;
+      background-color: #102112;
       width: 250px;
       height: 100vh;
       display: flex;
