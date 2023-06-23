@@ -182,10 +182,23 @@ const app = async () => {
 
   // ---------------------------------------------------------------
 
-  regenerateButton.addEventListener('click', () => {
-  // eslint-disable-next-line no-alert
-    alert('Переделываю запрос');
-  });
+  /*regenerateButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const pElement = document.createElement('p');
+    const activeChat = document.querySelector('.active-chat');
+    const id = activeChat.id;
+    const messageById = finderMessage(id);
+    if(messageById === undefined){
+      return;
+    }
+    messageById.removeLast();
+    const response = await sendMessage(messageById);
+    pElement.classList.add('assistant-message');
+    output.removeChild(output.lastChild);
+    pElement.textContent = response;
+    output.appendChild(pElement);
+    messageById.add('assistant', response);
+  }); */
   // ---------------------------------------------------------------
 
   form.addEventListener('submit', async (event) => {
@@ -198,7 +211,6 @@ const app = async () => {
   // ---------------------------------------------------------------
 
   input.addEventListener('keydown', (event) => {
-    console.log(event.target.value.length)
     if (event.key === 'Enter') {
       event.preventDefault();
       submitButton.classList.remove('active');
