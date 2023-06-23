@@ -205,25 +205,28 @@ const app = async () => {
       submitForm(event.target.value);
     }
   });
+   // ---------------------------------------------------------------
   list.addEventListener('click', (event) =>{
     const olAllElements = document.querySelectorAll('ol');
-    if(event.target.classList.contains('active-chat')){
+    const olElement = event.target.closest('ol');
+    if(event.target.classList.contains('active-chat') || olElement === null){
       return;
     }
     output.innerHTML = '';
     olAllElements.forEach((olEl) =>{
       olEl.classList.remove('active-chat');
     })
-    const olElement = event.target.closest('ol');
     const findId = olElement.id;
+    olElement.classList.add('active-chat');
+    if(finderMessage(findId) === undefined){
+      return;
+    }
     const messageFindById = finderMessage(findId);
     const messageForHTML = messageFindById.parseToHTML()
     messageForHTML.forEach((message) =>{
       output.appendChild(message.el);
     })
-    olElement.classList.add('active-chat');
   })
-
   form.reset();
   input.focus();
 };
