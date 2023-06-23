@@ -28,6 +28,8 @@ const app = async () => {
   });
   // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
+  const sectionMain = document.querySelector('.main');
+  const divMain = sectionMain.querySelector('.main');
   const output = document.querySelector('#output');
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -111,7 +113,6 @@ const app = async () => {
 
   // dark - light mode knopka
   toggle.addEventListener('click', (event) => {
-    const sectionMain = document.querySelector('.main');
     const elementSection = sectionMain.querySelectorAll('*');
     const myEvent = event;
     if (myEvent.target.classList.contains('dark-mode')) {
@@ -177,6 +178,7 @@ const app = async () => {
 
   addButton.addEventListener('click', () => {
     output.innerHTML = '';
+    divMain.prepend(title);
     const olAll = document.querySelectorAll('ol');
     olAll.forEach((ol) => {
       ol.classList.remove('active-chat');
@@ -221,6 +223,7 @@ const app = async () => {
     const findId = olElement.id;
     olElement.classList.add('active-chat');
     if (finderMessage(findId) === undefined) {
+      divMain.prepend(title);
       return;
     }
     const messageFindById = finderMessage(findId);
@@ -228,6 +231,7 @@ const app = async () => {
     messageForHTML.forEach((message) => {
       output.appendChild(message.el);
     });
+    title.remove();
   });
   form.reset();
   input.focus();
