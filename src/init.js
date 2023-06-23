@@ -169,13 +169,7 @@ const app = async () => {
   });
 
   // ---------------------------------------------------------------
-
-  submitButton.addEventListener('click', () => {
-  // eslint-disable-next-line no-alert
-    alert('я отправляю запрос');
-  });
-  // ---------------------------------------------------------------
-
+  
   addButton.addEventListener('click', () => {
     output.innerHTML = '';
     divMain.prepend(title);
