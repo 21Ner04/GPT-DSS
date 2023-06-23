@@ -111,7 +111,7 @@ const app = async () => {
 
   // dark - light mode knopka
   toggle.addEventListener('click', (event) => {
-    const sectionMain = document.querySelector('.main')
+    const sectionMain = document.querySelector('.main');
     const elementSection = sectionMain.querySelectorAll('*');
     const myEvent = event;
     if (myEvent.target.classList.contains('dark-mode')) {
