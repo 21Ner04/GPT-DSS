@@ -9,7 +9,7 @@
     .body-black{
       margin: 0;
       padding: 0;
-      background-color: #111124;
+      background-color: #091921;
       display: flex;
     }
 
@@ -30,7 +30,7 @@
  
 /* Стили для боковой панели */
     .side-var {
-      background-color: #18191b;
+      background-color: #122b167d;
       width: 250px;
       height: 100vh;
       display: flex;
@@ -329,6 +329,7 @@ select {
   }
   
   /* Стили для вопросов user's */
+/* Styles for User's Questions */
 .user-message {
     padding: 20px 10px;
     border-radius: 9px;
@@ -338,11 +339,12 @@ select {
     display: block;
     margin: 10px auto;
     background-color: transparent;
-    border: 0.5px solid #ccc;
+    border: 0.5px solid #2f065e;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     -ms-border-radius: 9px;
     -o-border-radius: 9px;
+    max-width: max-content;
 }
 
 /* Стили для  ответов  бота*/
@@ -355,7 +357,7 @@ select {
     margin: 10px;
     text-align: left;
     background-color: transparent;
-    border: 0.5px solid #ccc;
+    border: 0.5px solid #105679;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     -ms-border-radius: 9px;

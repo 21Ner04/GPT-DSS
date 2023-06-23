@@ -179,6 +179,7 @@ const app = async () => {
       ol.classList.remove('active-chat');
     });
     renderChats(list);
+    // eslint-disable-next-line no-console
     console.log(state.history);
   });
 
@@ -205,28 +206,28 @@ const app = async () => {
       submitForm(event.target.value);
     }
   });
-   // ---------------------------------------------------------------
-  list.addEventListener('click', (event) =>{
+  // ---------------------------------------------------------------
+  list.addEventListener('click', (event) => {
     const olAllElements = document.querySelectorAll('ol');
     const olElement = event.target.closest('ol');
-    if(event.target.classList.contains('active-chat') || olElement === null){
+    if (event.target.classList.contains('active-chat') || olElement === null) {
       return;
     }
     output.innerHTML = '';
-    olAllElements.forEach((olEl) =>{
+    olAllElements.forEach((olEl) => {
       olEl.classList.remove('active-chat');
-    })
+    });
     const findId = olElement.id;
     olElement.classList.add('active-chat');
-    if(finderMessage(findId) === undefined){
+    if (finderMessage(findId) === undefined) {
       return;
     }
     const messageFindById = finderMessage(findId);
-    const messageForHTML = messageFindById.parseToHTML()
-    messageForHTML.forEach((message) =>{
+    const messageForHTML = messageFindById.parseToHTML();
+    messageForHTML.forEach((message) => {
       output.appendChild(message.el);
-    })
-  })
+    });
+  });
   form.reset();
   input.focus();
 };
