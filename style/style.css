@@ -71,7 +71,6 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 2px solid #ccc;
         padding: 10px;
         border: none;
         background-color: rgba( 255, 255, 255, 0.05);
@@ -103,6 +102,10 @@ body{
     textarea:focus {
         outline: none;
     }
+    
+   /* textarea:hover { -------------------------------- если понадобится
+      border: 1px solid  green/* Цвет элемента при наведении */
+    /*} 
     
      /* Стили для кнопки "Показать больше" */
     .btn-more {
