@@ -35,7 +35,7 @@ const app = async () => {
   const title = document.querySelector('h1');
   const trash = document.querySelector('.trash');
   const list = document.querySelector('.chat-list');
-  const p = document.querySelector('#inf');
+  const pInf = document.querySelector('#inf');
   const info = document.querySelector('.info');
   const submitButton = document.querySelector('.btn-submit');
   const addButton = document.querySelector('.add-chat');
@@ -158,7 +158,7 @@ const app = async () => {
     regenerateButton.textContent = i18nextInstance.t('reset');
     toggle.textContent = i18nextInstance.t(toggle.name);
     info.textContent = i18nextInstance.t('info');
-    p.textContent = i18nextInstance.t('inf');
+    pInf.textContent = i18nextInstance.t('inf');
     title.textContent = i18nextInstance.t('title');
     trash.textContent = i18nextInstance.t('trash');
   });
