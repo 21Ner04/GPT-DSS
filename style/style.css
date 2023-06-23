@@ -176,9 +176,11 @@ body{
         cursor: pointer;
         border: solid 0px rgb(25, 195, 125);
         position: relative;
-        bottom: 33px;
-        left: 160px;
+        bottom: 47px;
+        left: 435px;
         width: 8%;
+        font-size: 30px;
+        color: white;
     }
 
     /* Стили для навигации */
