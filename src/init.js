@@ -204,11 +204,25 @@ const app = async () => {
   // ---------------------------------------------------------------
 
   input.addEventListener('keydown', (event) => {
+    console.log(event.target.value.length)
     if (event.key === 'Enter') {
       event.preventDefault();
+      submitButton.classList.remove('active');
+      submitButton.setAttribute('disabled', '');
       submitForm(event.target.value);
     }
   });
+
+  input.addEventListener('input', (event) =>{
+    event.preventDefault();
+    if(event.target.value.length === 0){
+      submitButton.classList.remove('active');
+      submitButton.setAttribute('disabled', '');
+      return;
+    }
+    submitButton.classList.add('active');
+    submitButton.removeAttribute('disabled');
+  })
   // ---------------------------------------------------------------
   list.addEventListener('click', (event) => {
     const olAllElements = document.querySelectorAll('ol');
