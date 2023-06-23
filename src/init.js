@@ -25,8 +25,6 @@ const app = async () => {
   });
   // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
-
-  const { body } = document;
   const output = document.querySelector('#output');
   const input = document.querySelector('textarea');
   const title = document.querySelector('h1');
@@ -180,8 +178,6 @@ const app = async () => {
       ol.classList.remove('active-chat');
     });
     renderChats(list);
-    // eslint-disable-next-line no-console
-    console.log(state.history);
   });
 
   // ---------------------------------------------------------------
