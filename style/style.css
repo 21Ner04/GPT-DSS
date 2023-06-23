@@ -341,6 +341,7 @@ select {
     -ms-border-radius: 9px;
     -o-border-radius: 9px;
   max-width: max-content;
+  display: inline-block;
 }
 
 /* Styles for chatbot messages */
