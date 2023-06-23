@@ -16,7 +16,7 @@ const app = async () => {
   const state = {
     lang: 'en',
     history: [],
-    form:{
+    form: {
       state: 'none',
     },
   };
