@@ -337,7 +337,7 @@ select {
   max-width: 90%;
   white-space: pre-wrap;
   text-align: right; /* switch to left */
-  display: block;
+  display: flex;
   margin: 20px auto;
   background-color: #009754;
   border: 0.5px solid #009754;
@@ -347,6 +347,9 @@ select {
     -o-border-radius: 9px;
   max-width: max-content;
   display: inline-block;
+  flex-direction: column;
+  align-items: right;
+
 }
 
 /* Styles for chatbot messages */
@@ -358,8 +361,8 @@ select {
   display: block;
   margin: 20px auto;
   /* switch to right */
-  background-color: #74470b;
-      border: 0.5px solid #74470b;
+  background-color: #009754;
+      border: 0.5px solid #009754;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     -ms-border-radius: 9px;
