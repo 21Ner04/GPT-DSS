@@ -1,10 +1,12 @@
+import finderMessage from './utils/utils.js'
+
+import initWatchers from './watchers.js'
+
 import i18next from 'i18next';
 
 import _ from 'lodash';
 
 import Messages from './components/Messages.js';
-
-import { sendMessage } from './server.js';
 
 import resources from './locales/index.js';
 
@@ -16,10 +18,12 @@ const app = async () => {
   const state = {
     lang: 'en',
     history: [],
+    activeMessage: '',
     form: {
-      state: 'none',
+      state: 'ready',
     },
   };
+  const watcherState = initWatchers(state)
 
   const i18nextInstance = i18next.createInstance();
   await i18nextInstance.init({
@@ -46,16 +50,7 @@ const app = async () => {
   const language = document.querySelector('.theme-toggle');
 
   languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
-
-  // eslint-disable-next-line max-len
-  //-------------------------------------------------------------------------------------------------
-  const finderMessage = (id) => {
-    const result = state.history.find((message) => message.id === id);
-    return result;
-  };
-  // eslint-disable-next-line max-len
-  //-------------------------------------------------------------------------------------------------
-  // eslint-disable-next-line no-shadow
+  
   const renderChats = (list, name = '') => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
@@ -72,12 +67,11 @@ const app = async () => {
   };
     // eslint-disable-next-line max-len
     // ----------------------------------------------------------------------------------------------
-  const submitForm = async (value) => {
+  const submitForm = (value) => {
     if (list.children.length === 0) {
       renderChats(list, value);
     }
     const div = document.createElement('div');
-    // eslint-disable-next-line no-shadow
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
     const activeElement = activeChat.querySelector('li > a');
@@ -86,31 +80,27 @@ const app = async () => {
       activeElement.textContent = myValue.trim();
     }
     const { id } = activeChat;
-    const messages = finderMessage(id) === undefined ? new Messages() : finderMessage(id);
+    const messages = finderMessage(id,watcherState) === undefined ? new Messages() : finderMessage(id, watcherState);
     if (messages.id === 'none') {
       messages.generateId(id);
-      state.history.push(messages);
+      watcherState.history.push(messages);
     }
     messages.add('user', value);
-    const send = await sendMessage(messages);
-    messages.add('assistant', send);
-    p.textContent = send;
+    p.classList.add('assistant-message');
     div.textContent = value;
     div.classList.add('user-message');
-    p.classList.add('assistant-message');
     output.appendChild(div);
     output.appendChild(p);
     title.remove();
     form.reset();
     input.focus();
+    watcherState.form.state = 'processing'
   };
-  // eslint-disable-next-line max-len
-  //-------------------------------------------------------------------------------------------------
 
   const changeLang = async (lang) => {
     await i18nextInstance.changeLanguage(lang);
   };
-
+  
   // dark - light mode knopka
   toggle.addEventListener('click', (event) => {
     const elementSection = sectionMain.querySelectorAll('*');
@@ -242,15 +232,11 @@ const app = async () => {
     });
     const findId = olElement.id;
     olElement.classList.add('active-chat');
-    if (finderMessage(findId) === undefined) {
+    if (finderMessage(findId, watcherState) === undefined) {
       divMain.prepend(title);
       return;
     }
-    const messageFindById = finderMessage(findId);
-    const messageForHTML = messageFindById.parseToHTML();
-    messageForHTML.forEach((message) => {
-      output.appendChild(message.el);
-    });
+    watcherState.form.state = 'rendering';
     title.remove();
   });
   form.reset();
