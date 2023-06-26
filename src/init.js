@@ -1,10 +1,8 @@
-import finderMessage from './utils/utils.js'
-
-import initWatchers from './watchers.js'
-
 import i18next from 'i18next';
-
 import _ from 'lodash';
+import finderMessage from './utils/utils.js';
+
+import initWatchers from './watchers.js';
 
 import Messages from './components/Messages.js';
 
@@ -23,7 +21,7 @@ const app = async () => {
       state: 'ready',
     },
   };
-  const watcherState = initWatchers(state)
+  const watcherState = initWatchers(state);
 
   const i18nextInstance = i18next.createInstance();
   await i18nextInstance.init({
@@ -50,7 +48,7 @@ const app = async () => {
   const language = document.querySelector('.theme-toggle');
 
   languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
-  
+
   const renderChats = (list, name = '') => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
@@ -80,7 +78,7 @@ const app = async () => {
       activeElement.textContent = myValue.trim();
     }
     const { id } = activeChat;
-    const messages = finderMessage(id,watcherState) === undefined ? new Messages() : finderMessage(id, watcherState);
+    const messages = finderMessage(id, watcherState) === undefined ? new Messages() : finderMessage(id, watcherState);
     if (messages.id === 'none') {
       messages.generateId(id);
       watcherState.history.push(messages);
@@ -94,13 +92,13 @@ const app = async () => {
     title.remove();
     form.reset();
     input.focus();
-    watcherState.form.state = 'processing'
+    watcherState.form.state = 'processing';
   };
 
   const changeLang = async (lang) => {
     await i18nextInstance.changeLanguage(lang);
   };
-  
+
   // dark - light mode knopka
   toggle.addEventListener('click', (event) => {
     const elementSection = sectionMain.querySelectorAll('*');
@@ -159,7 +157,7 @@ const app = async () => {
   });
 
   // ---------------------------------------------------------------
-  
+
   addButton.addEventListener('click', () => {
     output.innerHTML = '';
     divMain.prepend(title);
@@ -172,23 +170,11 @@ const app = async () => {
 
   // ---------------------------------------------------------------
 
-  /*regenerateButton.addEventListener('click', async (event) => {
+  regenerateButton.addEventListener('click', async (event) => {
     event.preventDefault();
-    const pElement = document.createElement('p');
-    const activeChat = document.querySelector('.active-chat');
-    const id = activeChat.id;
-    const messageById = finderMessage(id);
-    if(messageById === undefined){
-      return;
-    }
-    messageById.removeLast();
-    const response = await sendMessage(messageById);
-    pElement.classList.add('assistant-message');
-    output.removeChild(output.lastChild);
-    pElement.textContent = response;
-    output.appendChild(pElement);
-    messageById.add('assistant', response);
-  }); */
+    output.lastChild.textContent = '';
+    watcherState.form.state = 'resetting';
+  });
   // ---------------------------------------------------------------
 
   form.addEventListener('submit', async (event) => {
@@ -209,16 +195,16 @@ const app = async () => {
     }
   });
 
-  input.addEventListener('input', (event) =>{
+  input.addEventListener('input', (event) => {
     event.preventDefault();
-    if(event.target.value.length === 0){
+    if (event.target.value.length === 0) {
       submitButton.classList.remove('active');
       submitButton.setAttribute('disabled', '');
       return;
     }
     submitButton.classList.add('active');
     submitButton.removeAttribute('disabled');
-  })
+  });
   // ---------------------------------------------------------------
   list.addEventListener('click', (event) => {
     const olAllElements = document.querySelectorAll('ol');

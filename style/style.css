@@ -353,3 +353,7 @@ background-color: #FFFFFF;
 border: 1px solid #009754;
 color: #333333;
 }
+
+.response:hover {
+  background-color: #808080;
+}

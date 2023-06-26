@@ -9,6 +9,6 @@ parserOptions:
 rules: 
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
-    - js: always
     - ignorePackages
+    - js: always
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
