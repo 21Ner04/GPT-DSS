@@ -332,40 +332,24 @@ select {
   /* Стили для вопросов user's */
 /* Styles for User's Questions */
 .user-message {
-  padding: 20px 10px;
-  border-radius: 10px; /* reduce roundness */
-  max-width: 90%;
-  white-space: pre-wrap;
-  text-align: right; /* switch to left */
-  display: flex;
-  margin: 20px auto;
-  background-color: #009754;
-  border: 0.5px solid #009754;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    -ms-border-radius: 9px;
-    -o-border-radius: 9px;
-  max-width: max-content;
-  display: inline-block;
-  flex-direction: column;
-  align-items: right;
-
+padding: 10px 20px;
+border-radius: 10px;
+max-width: 60%;
+white-space: pre-wrap;
+text-align: right;
+margin: 20px auto;
+background-color: #009754;
+border: 1px solid #009754;
 }
 
-/* Styles for chatbot messages */
 .assistant-message {
-  padding: 20px 10px;
-  border-radius: 10px; /* reduce roundness */
-  max-width: 90%;
-  white-space: pre-wrap;
-  display: block;
-  margin: 20px auto;
-  /* switch to right */
-  background-color: #009754;
-      border: 0.5px solid #009754;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    -ms-border-radius: 9px;
-    -o-border-radius: 9px;
-  color: #FFFFFF;
+padding: 10px 20px;
+border-radius: 10px;
+max-width: 60%;
+white-space: pre-wrap;
+display: block;
+margin: 20px auto;
+background-color: #FFFFFF;
+border: 1px solid #009754;
+color: #333333;
 }
