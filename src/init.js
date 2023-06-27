@@ -69,6 +69,7 @@ const app = async () => {
     if (list.children.length === 0) {
       renderChats(list, value);
     }
+    regenerateButton.removeAttribute('hidden')
     const div = document.createElement('div');
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
@@ -160,6 +161,7 @@ const app = async () => {
 
   addButton.addEventListener('click', () => {
     output.innerHTML = '';
+    regenerateButton.setAttribute('hidden', '');
     divMain.prepend(title);
     const olAll = document.querySelectorAll('ol');
     olAll.forEach((ol) => {
@@ -219,10 +221,12 @@ const app = async () => {
     const findId = olElement.id;
     olElement.classList.add('active-chat');
     if (finderMessage(findId, watcherState) === undefined) {
+      regenerateButton.setAttribute('hidden', '');
       divMain.prepend(title);
       return;
     }
     watcherState.form.state = 'rendering';
+    regenerateButton.removeAttribute('hidden');
     title.remove();
   });
   form.reset();
