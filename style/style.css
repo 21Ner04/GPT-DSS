@@ -303,7 +303,7 @@ select {
 
   .custom-scr0llbar {
     white-space: nowrap; /* Запрет переноса строк */
-    overflow: hidden
+    overflow-y: scroll;
   }
   
   .custom-scr0llbar::-webkit-scrollbar {
@@ -323,10 +323,6 @@ select {
   
   .custom-scr0llbar::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0.2); /* Цвет трека скроллбара */
-  }
-
-  .custom-scr0llbar:hover {
-    overflow-y: auto; /* Включить вертикальную прокрутку при наведении */
   }
   
   /* Стили для вопросов user's */
