@@ -349,11 +349,25 @@ max-width: 60%;
 white-space: pre-wrap;
 display: block;
 margin: 20px auto;
-background-color: #FFFFFF;
+background-color: orange;
 border: 1px solid #009754;
 color: #333333;
 }
 
 .response:hover {
   background-color: #808080;
+}
+
+.blinking-cursor {
+  margin-left: 5px;
+  background-color: #808080;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.1%, 100% {
+    opacity: 0;
+  }
 }

@@ -1,3 +1,5 @@
+import { marked } from 'marked';
+
 // Импортируем библиотеку axios для работы с HTTP-запросами
 import axios from 'axios';
 // Функция tester, которая возвращает 1 больше нуля
@@ -18,7 +20,7 @@ async function sendMessage(messages) {
     model: 'gpt-3.5-turbo',
     messages: messages.getItems(),
     max_tokens: 2000,
-    temperature: 0.7,
+    temperature: 0.5,
   };
 
   // Объект с настройками для отправки запроса
@@ -35,7 +37,7 @@ async function sendMessage(messages) {
     // Извлекаем текст ответа из данных ответа
     const responseData = response.data.choices[0];
 
-    return responseData.message.content;
+    return marked.parse(responseData.message.content);
     // Если произошла ошибка, выводим ее в консоль
   } catch (error) {
     // eslint-disable-next-line no-console

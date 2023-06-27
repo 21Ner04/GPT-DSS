@@ -14,28 +14,43 @@ const initWatchers = (initState) => {
     const activeChat = document.querySelector('.active-chat');
     const { id } = activeChat;
     const messages = finderMessage(id, initState);
-    const send = await sendMessage(messages);
-    const cloneMessage = _.cloneDeep(messages);
-    const messageForHTML = cloneMessage.parseToHTML();
+
+   let index = 0;
+    const type = () =>{
+      const text = messages.getLast().content;
+      if (index < text.length) {
+        assistantMessage.innerHTML = text.slice(0, index) + '<span class="blinking-cursor">|</span>';
+        index++;
+        setTimeout(type, 50);
+      }
+        else if(index === text.length){
+          assistantMessage.removeChild(assistantMessage.lastChild);
+        }
+      else {
+        assistantMessage.innerHTML = text.slice(0, index) + '<span class="blinking-cursor">|</span>';
+      }
+    } 
+
     switch (state) {
       case 'ready':
         break;
       case 'processing':
+        const send = await sendMessage(messages);
         messages.add('assistant', send);
-        assistantMessage.textContent = send;
+        type()
         break;
       case 'rendering':
+        const cloneMessage = _.cloneDeep(messages);
+        const messageForHTML = cloneMessage.parseToHTML();
         messageForHTML.forEach((message) => {
           output.appendChild(message.el);
         });
         break;
       case 'resetting':
-        if (messages === undefined) {
-          return;
-        }
+        const send2 = await sendMessage(messages);
         messages.removeLast();
-        messages.add('assistant', send);
-        assistantMessage.textContent = send;
+        messages.add('assistant', send2);
+        type();
         break;
       default:
         throw new Error('Unknown state');

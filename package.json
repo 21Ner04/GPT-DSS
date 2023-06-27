@@ -23,6 +23,7 @@
     "axios": "^1.4.0",
     "i18next": "^22.5.1",
     "lodash": "^4.17.21",
+    "marked": "^5.1.0",
     "on-change": "^4.0.2"
   },
   "devDependencies": {

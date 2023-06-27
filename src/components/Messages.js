@@ -20,6 +20,14 @@ export default class Messages {
     this.messages.shift();
   }
 
+  getLast(){
+    return this.messages[this.messages.length - 1];
+  }
+
+  getFirst(){
+    return this.messages[0];
+  }
+  
   reset() {
     this.messages = [];
   }
@@ -41,7 +49,7 @@ export default class Messages {
         // eslint-disable-next-line no-param-reassign
         item.el = div;
       } else if (item.role === 'assistant') {
-        p.textContent = item.content;
+        p.innerHTML = item.content;
         // eslint-disable-next-line no-param-reassign
         item.el = p;
       }
