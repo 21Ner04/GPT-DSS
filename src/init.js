@@ -30,6 +30,7 @@ const app = async () => {
   });
   // eslint-disable-next-line max-len
   //-------------------------------------------------------------------------------------------------
+  const bottomSection = document.querySelector('.bottom-section');
   const sectionMain = document.querySelector('.main');
   const divMain = sectionMain.querySelector('.main');
   const output = document.querySelector('#output');
@@ -104,7 +105,7 @@ const app = async () => {
 
   // dark - light mode knopka
   toggle.addEventListener('click', (event) => {
-    const elementSection = sectionMain.querySelectorAll('*');
+    const elementSection = bottomSection.querySelectorAll('*');
     const myEvent = event;
     if (myEvent.target.classList.contains('dark-mode')) {
       sectionMain.classList.remove('main-black');
@@ -115,6 +116,8 @@ const app = async () => {
       myEvent.target.textContent = i18nextInstance.t('themeDark');
       elementSection.forEach((element) => {
         const copyElement = element;
+        info.style.color = 'black';
+        title.style.color = 'black';
         copyElement.style.color = 'black';
       });
     } else {
@@ -126,7 +129,10 @@ const app = async () => {
       myEvent.target.textContent = i18nextInstance.t('themeLight');
       elementSection.forEach((element) => {
         const copyElement = element;
+        info.style.color = 'rgba( 255, 255, 255, 0.5)'
+        title.style.color = 'white';
         copyElement.style.color = 'white';
+        submitButton.style.color = '';
       });
     }
   });
