@@ -147,7 +147,7 @@ body{
         background-color: transparent;
         position: relative;
         bottom: 47px;
-        left: 435px;
+        left: 450px;
         width: 8%;
         font-size: 30px;
         color: rgb(78, 65, 65);
@@ -178,7 +178,7 @@ body{
         position: relative;
         border-radius: 10px;
         bottom: 47px;
-        left: 435px;
+        left: 450px;
         width: 45px;
         color: white;
         -webkit-border-radius: 10px;
@@ -350,8 +350,8 @@ white-space: pre-wrap;
 display: block;
 margin: 20px auto;
 background-color: rgba(98, 0, 255, 0.61);
-border: 1px solid rgb(98, 0, 255);
-color: #333333;
+border: 1px solid rgba(98, 0, 255, 0.61);
+color: #c50202;
 }
 
 .response:hover {
@@ -363,6 +363,7 @@ color: #333333;
   background-color: #808080;
   animation: blink 1s infinite;
 }
+
 @keyframes blink {
   0%, 50% {
     opacity: 1;
