@@ -15,21 +15,19 @@ const initWatchers = (initState) => {
     const { id } = activeChat;
     const messages = finderMessage(id, initState);
 
-   let index = 0;
-    const type = () =>{
+    let index = 0;
+    const type = () => {
       const text = messages.getLast().content;
       if (index < text.length) {
-        assistantMessage.innerHTML = text.slice(0, index) + '<span class="blinking-cursor">|</span>';
+        assistantMessage.innerHTML = `${text.slice(0, index)}<span class="blinking-cursor">|</span>`;
         index++;
         setTimeout(type, 50);
+      } else if (index === text.length) {
+        assistantMessage.removeChild(assistantMessage.lastChild);
+      } else {
+        assistantMessage.innerHTML = `${text.slice(0, index)}<span class="blinking-cursor">|</span>`;
       }
-        else if(index === text.length){
-          assistantMessage.removeChild(assistantMessage.lastChild);
-        }
-      else {
-        assistantMessage.innerHTML = text.slice(0, index) + '<span class="blinking-cursor">|</span>';
-      }
-    } 
+    };
 
     switch (state) {
       case 'ready':
@@ -37,7 +35,7 @@ const initWatchers = (initState) => {
       case 'processing':
         const send = await sendMessage(messages);
         messages.add('assistant', send);
-        type()
+        type();
         break;
       case 'rendering':
         const cloneMessage = _.cloneDeep(messages);

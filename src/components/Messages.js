@@ -20,14 +20,14 @@ export default class Messages {
     this.messages.shift();
   }
 
-  getLast(){
+  getLast() {
     return this.messages[this.messages.length - 1];
   }
 
-  getFirst(){
+  getFirst() {
     return this.messages[0];
   }
-  
+
   reset() {
     this.messages = [];
   }

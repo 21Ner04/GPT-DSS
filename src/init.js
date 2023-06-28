@@ -69,7 +69,7 @@ const app = async () => {
     if (list.children.length === 0) {
       renderChats(list, value);
     }
-    regenerateButton.removeAttribute('hidden')
+    regenerateButton.removeAttribute('hidden');
     const div = document.createElement('div');
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
