@@ -49,6 +49,7 @@ const app = async () => {
 
   languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
 
+  // eslint-disable-next-line no-shadow
   const renderChats = (list, name = '') => {
     const ol = document.createElement('ol');
     const li = document.createElement('li');
@@ -79,6 +80,7 @@ const app = async () => {
       activeElement.textContent = myValue.trim();
     }
     const { id } = activeChat;
+    // eslint-disable-next-line max-len
     const messages = finderMessage(id, watcherState) === undefined ? new Messages() : finderMessage(id, watcherState);
     if (messages.id === 'none') {
       messages.generateId(id);

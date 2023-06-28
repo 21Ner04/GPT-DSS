@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { marked } from 'marked';
 
 // Импортируем библиотеку axios для работы с HTTP-запросами
