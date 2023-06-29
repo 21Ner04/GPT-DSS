@@ -38,7 +38,7 @@ npx webpack serve
 
 Later, the project will be uploaded to Vercel and it will be possible to enter ordinary users / Позже проект будет загружен на Vercel и можно будет заходить обычным пользователям
 
-# Contributors
+## Contributors / Авторы
 
 <https://github.com/21Ner04>
 
