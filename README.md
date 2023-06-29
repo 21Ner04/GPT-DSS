@@ -2,15 +2,15 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/679f259b7ebe9fead8c8/maintainability)](https://codeclimate.com/github/21Ner04/Dream_Squad_Six_/maintainability)
 [![Project CI](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/projectCI.yml/badge.svg)](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/projectCI.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/679f259b7ebe9fead8c8/test_coverage)](https://codeclimate.com/github/21Ner04/Dream_Squad_Six_/test_coverage)
-## Features
+## Features / ## Функции
 - User-friendly interface for making requests to the OpenAI API
 - Responses are displayed in a chat-like format
   
-## Steps to run the project / #№ Шаги чтобы запустить проект 
+## Steps to run the project / ## Шаги чтобы запустить проект 
 
 1. Clone the repository / клонируйте репозиторий:
 ```bash
-git clone https://github.com/21Ner04/GPT-Dream-Squad-Six-.git;
+git clone https://github.com/21Ner04/GPT-Dream-Squad-Six-.git
 ```
 
 2. Install the dependencies / Установите зависимости:
@@ -41,9 +41,9 @@ Later, the project will be uploaded to Vercel and it will be possible to enter o
 <https://github.com/ShoZYXrk>
 
 **_Tech used_**
-- Css
-- JS
-- Html
+- CSS
+- JavaScript
+- HTML
 
 # Example
 
