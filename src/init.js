@@ -38,7 +38,7 @@ const app = async () => {
       form: document.querySelector('form'),
       toggle: document.querySelector('.theme'),
       language: document.querySelector('.theme-toggle'),
-    }
+    },
   };
   const watcherState = initWatchers(state);
 
@@ -128,7 +128,7 @@ const app = async () => {
       myEvent.target.textContent = i18nextInstance.t('themeLight');
       elementSection.forEach((element) => {
         const copyElement = element;
-        state.elements.info.style.color = 'rgba( 255, 255, 255, 0.5)'
+        state.elements.info.style.color = 'rgba( 255, 255, 255, 0.5)';
         state.elements.title.style.color = 'white';
         copyElement.style.color = 'white';
         state.elements.submitButton.style.color = '';
