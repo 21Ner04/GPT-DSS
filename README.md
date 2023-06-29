@@ -26,4 +26,5 @@
 
 # Example
 
-<img src="https://github.com/21Ner04/GPT-Dream-Squad-Six-/blob/main/assets/images/image%20chat-b.png" /><img src="https://github.com/21Ner04/GPT-Dream-Squad-Six-/blob/main/assets/images/image%20chat-l.png" />
+<img src="https://github.com/21Ner04/GPT-Dream-Squad-Six-/blob/main/assets/images/image%20chat-b.png" />
+<img src="https://github.com/21Ner04/GPT-Dream-Squad-Six-/blob/main/assets/images/image%20chat-l.png" />
