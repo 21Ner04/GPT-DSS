@@ -34,7 +34,7 @@ npm ci
 npx webpack serve
 ```
 
-5. Now when you navigate to <http://localhost:8080/> you will see web response.
+5. Now when you navigate to <http://localhost:8080> you will see web response.
 
 Later, the project will be uploaded to Vercel and it will be possible to enter ordinary users / Позже проект будет загружен на Vercel и можно будет заходить обычным пользователям
 
