@@ -1,8 +1,9 @@
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/679f259b7ebe9fead8c8/maintainability)](https://codeclimate.com/github/21Ner04/Dream_Squad_Six_/maintainability)
 [![Project CI](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/projectCI.yml/badge.svg)](https://github.com/21Ner04/Dream_Squad_Six_/actions/workflows/projectCI.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/679f259b7ebe9fead8c8/test_coverage)](https://codeclimate.com/github/21Ner04/Dream_Squad_Six_/test_coverage)
 
-# Шаги чтобы запустить проект 
+# Шаги чтобы запустить проект
 
 1.git clone (ssh,http);
 
@@ -16,8 +17,8 @@
 
 # Contributors
 
-https://github.com/21Ner04
+<https://github.com/21Ner04>
 
-https://github.com/AndreyPiganov
+<https://github.com/AndreyPiganov>
 
-https://github.com/ShoZYXrk
+<https://github.com/ShoZYXrk>
