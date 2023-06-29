@@ -9,8 +9,7 @@ import { sendMessage } from './server.js';
 const initWatchers = (initState) => {
   const formHandler = async () => {
     const { state } = initState.form;
-    const output = document.querySelector('#output');
-    const assistantMessage = output.lastChild;
+    const assistantMessage = initState.elements.output.lastChild;
     const activeChat = document.querySelector('.active-chat');
     const { id } = activeChat;
     const messages = finderMessage(id, initState);
@@ -45,7 +44,7 @@ const initWatchers = (initState) => {
         // eslint-disable-next-line no-case-declarations
         const messageForHTML = cloneMessage.parseToHTML();
         messageForHTML.forEach((message) => {
-          output.appendChild(message.el);
+          initState.elements.output.appendChild(message.el);
         });
         break;
       case 'resetting':

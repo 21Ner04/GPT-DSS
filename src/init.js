@@ -163,6 +163,8 @@ const app = async () => {
   state.elements.trash.addEventListener('click', () => {
     state.elements.list.innerHTML = '';
     state.history = [];
+    state.elements.output.innerHTML = '';
+    state.elements.regenerateButton.setAttribute('hidden', '');
   });
 
   // ---------------------------------------------------------------
