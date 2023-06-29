@@ -8,5 +8,6 @@ export default {
     inf: 'Made DSS',
     title: 'ChatGPT by DSS',
     trash: '🗑 Clear conversations',
+    placeholder: 'Send a message',
   },
 };

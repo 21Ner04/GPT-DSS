@@ -20,6 +20,25 @@ const app = async () => {
     form: {
       state: 'ready',
     },
+    elements: {
+      bottomSection: document.querySelector('.bottom-section'),
+      sectionMain: document.querySelector('.main'),
+      divMain: document.querySelector('.main > div'),
+      output: document.querySelector('#output'),
+      input: document.querySelector('textarea'),
+      title: document.querySelector('h1'),
+      trash: document.querySelector('.trash'),
+      list: document.querySelector('.chat-list'),
+      pInf: document.querySelector('#inf'),
+      info: document.querySelector('.info'),
+      submitButton: document.querySelector('.btn-submit'),
+      addButton: document.querySelector('.add-chat'),
+      regenerateButton: document.querySelector('.response'),
+      languageButton: document.querySelector('.theme-toggle'),
+      form: document.querySelector('form'),
+      toggle: document.querySelector('.theme'),
+      language: document.querySelector('.theme-toggle'),
+    }
   };
   const watcherState = initWatchers(state);
 
@@ -28,27 +47,8 @@ const app = async () => {
     lng: state.lang,
     resources,
   });
-  // eslint-disable-next-line max-len
-  //-------------------------------------------------------------------------------------------------
-  const bottomSection = document.querySelector('.bottom-section');
-  const sectionMain = document.querySelector('.main');
-  const divMain = sectionMain.querySelector('.main');
-  const output = document.querySelector('#output');
-  const input = document.querySelector('textarea');
-  const title = document.querySelector('h1');
-  const trash = document.querySelector('.trash');
-  const list = document.querySelector('.chat-list');
-  const pInf = document.querySelector('#inf');
-  const info = document.querySelector('.info');
-  const submitButton = document.querySelector('.btn-submit');
-  const addButton = document.querySelector('.add-chat');
-  const regenerateButton = document.querySelector('.response');
-  const languageButton = document.querySelector('.theme-toggle');
-  const form = document.querySelector('form');
-  const toggle = document.querySelector('.theme');
-  const language = document.querySelector('.theme-toggle');
 
-  languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
+  state.elements.languageButton.insertAdjacentHTML('afterbegin', `<img src=${enImage} alt="en">`);
 
   // eslint-disable-next-line no-shadow
   const renderChats = (list, name = '') => {
@@ -65,13 +65,12 @@ const app = async () => {
     ol.appendChild(li);
     list.prepend(ol);
   };
-    // eslint-disable-next-line max-len
-    // ----------------------------------------------------------------------------------------------
+
   const submitForm = (value) => {
-    if (list.children.length === 0) {
-      renderChats(list, value);
+    if (state.elements.list.children.length === 0) {
+      renderChats(state.elements.list, value);
     }
-    regenerateButton.removeAttribute('hidden');
+    state.elements.regenerateButton.removeAttribute('hidden');
     const div = document.createElement('div');
     const p = document.createElement('p');
     const activeChat = document.querySelector('.active-chat');
@@ -91,11 +90,11 @@ const app = async () => {
     p.classList.add('assistant-message');
     div.textContent = value;
     div.classList.add('user-message');
-    output.appendChild(div);
-    output.appendChild(p);
-    title.remove();
-    form.reset();
-    input.focus();
+    state.elements.output.appendChild(div);
+    state.elements.output.appendChild(p);
+    state.elements.title.remove();
+    state.elements.form.reset();
+    state.elements.input.focus();
     watcherState.form.state = 'processing';
   };
 
@@ -104,42 +103,42 @@ const app = async () => {
   };
 
   // dark - light mode knopka
-  toggle.addEventListener('click', (event) => {
-    const elementSection = bottomSection.querySelectorAll('*');
+  state.elements.toggle.addEventListener('click', (event) => {
+    const elementSection = state.elements.bottomSection.querySelectorAll('*');
     const myEvent = event;
     if (myEvent.target.classList.contains('dark-mode')) {
-      sectionMain.classList.remove('main-black');
-      sectionMain.classList.add('main-white');
+      state.elements.sectionMain.classList.remove('main-black');
+      state.elements.sectionMain.classList.add('main-white');
       myEvent.target.classList.remove('dark-mode');
       myEvent.target.classList.add('light-mode');
       myEvent.target.name = 'themeDark';
       myEvent.target.textContent = i18nextInstance.t('themeDark');
       elementSection.forEach((element) => {
         const copyElement = element;
-        info.style.color = 'black';
-        title.style.color = 'black';
+        state.elements.info.style.color = 'black';
+        state.elements.title.style.color = 'black';
         copyElement.style.color = 'black';
       });
     } else {
       myEvent.target.classList.remove('light-mode');
       myEvent.target.classList.add('dark-mode');
-      sectionMain.classList.remove('main-white');
-      sectionMain.classList.add('main-black');
+      state.elements.sectionMain.classList.remove('main-white');
+      state.elements.sectionMain.classList.add('main-black');
       myEvent.target.name = 'themeLight';
       myEvent.target.textContent = i18nextInstance.t('themeLight');
       elementSection.forEach((element) => {
         const copyElement = element;
-        info.style.color = 'rgba( 255, 255, 255, 0.5)'
-        title.style.color = 'white';
+        state.elements.info.style.color = 'rgba( 255, 255, 255, 0.5)'
+        state.elements.title.style.color = 'white';
         copyElement.style.color = 'white';
-        submitButton.style.color = '';
+        state.elements.submitButton.style.color = '';
       });
     }
   });
   // ----------------------------------------------------------------------------------------------
 
   // re - e flag knopka
-  language.addEventListener('click', (event) => {
+  state.elements.language.addEventListener('click', (event) => {
     const myEvent = event;
     if (state.lang === 'en') {
       myEvent.target.src = ruImage;
@@ -151,43 +150,44 @@ const app = async () => {
       state.lang = 'en';
     }
     changeLang(state.lang);
-    addButton.textContent = i18nextInstance.t('addChat');
-    regenerateButton.textContent = i18nextInstance.t('reset');
-    toggle.textContent = i18nextInstance.t(toggle.name);
-    info.textContent = i18nextInstance.t('info');
-    pInf.textContent = i18nextInstance.t('inf');
-    title.textContent = i18nextInstance.t('title');
-    trash.textContent = i18nextInstance.t('trash');
+    state.elements.addButton.textContent = i18nextInstance.t('addChat');
+    state.elements.regenerateButton.textContent = i18nextInstance.t('reset');
+    state.elements.toggle.textContent = i18nextInstance.t(state.elements.toggle.name);
+    state.elements.info.textContent = i18nextInstance.t('info');
+    state.elements.pInf.textContent = i18nextInstance.t('inf');
+    state.elements.title.textContent = i18nextInstance.t('title');
+    state.elements.trash.textContent = i18nextInstance.t('trash');
+    state.elements.input.placeholder = i18nextInstance.t('placeholder');
   });
   // ---------------------------------------------------------------
-  trash.addEventListener('click', () => {
-    list.innerHTML = '';
+  state.elements.trash.addEventListener('click', () => {
+    state.elements.list.innerHTML = '';
     state.history = [];
   });
 
   // ---------------------------------------------------------------
 
-  addButton.addEventListener('click', () => {
-    output.innerHTML = '';
-    regenerateButton.setAttribute('hidden', '');
-    divMain.prepend(title);
+  state.elements.addButton.addEventListener('click', () => {
+    state.elements.output.innerHTML = '';
+    state.elements.regenerateButton.setAttribute('hidden', '');
+    state.elements.divMain.prepend(state.elements.title);
     const olAll = document.querySelectorAll('ol');
     olAll.forEach((ol) => {
       ol.classList.remove('active-chat');
     });
-    renderChats(list);
+    renderChats(state.elements.list);
   });
 
   // ---------------------------------------------------------------
 
-  regenerateButton.addEventListener('click', async (event) => {
+  state.elements.regenerateButton.addEventListener('click', async (event) => {
     event.preventDefault();
-    output.lastChild.textContent = '';
+    state.elements.output.lastChild.textContent = '';
     watcherState.form.state = 'resetting';
   });
   // ---------------------------------------------------------------
 
-  form.addEventListener('submit', async (event) => {
+  state.elements.form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const object = Object.fromEntries(formData);
@@ -196,48 +196,48 @@ const app = async () => {
 
   // ---------------------------------------------------------------
 
-  input.addEventListener('keydown', (event) => {
+  state.elements.input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      submitButton.classList.remove('active');
-      submitButton.setAttribute('disabled', '');
+      state.elements.submitButton.classList.remove('active');
+      state.elements.submitButton.setAttribute('disabled', '');
       submitForm(event.target.value);
     }
   });
 
-  input.addEventListener('input', (event) => {
+  state.elements.input.addEventListener('input', (event) => {
     event.preventDefault();
     if (event.target.value.length === 0) {
-      submitButton.classList.remove('active');
-      submitButton.setAttribute('disabled', '');
+      state.elements.submitButton.classList.remove('active');
+      state.elements.submitButton.setAttribute('disabled', '');
       return;
     }
-    submitButton.classList.add('active');
-    submitButton.removeAttribute('disabled');
+    state.elements.submitButton.classList.add('active');
+    state.elements.submitButton.removeAttribute('disabled');
   });
   // ---------------------------------------------------------------
-  list.addEventListener('click', (event) => {
+  state.elements.list.addEventListener('click', (event) => {
     const olAllElements = document.querySelectorAll('ol');
     const olElement = event.target.closest('ol');
     if (event.target.classList.contains('active-chat') || olElement === null) {
       return;
     }
-    output.innerHTML = '';
+    state.elements.output.innerHTML = '';
     olAllElements.forEach((olEl) => {
       olEl.classList.remove('active-chat');
     });
     const findId = olElement.id;
     olElement.classList.add('active-chat');
     if (finderMessage(findId, watcherState) === undefined) {
-      regenerateButton.setAttribute('hidden', '');
-      divMain.prepend(title);
+      state.elements.regenerateButton.setAttribute('hidden', '');
+      state.elements.divMain.prepend(state.elements.title);
       return;
     }
     watcherState.form.state = 'rendering';
-    regenerateButton.removeAttribute('hidden');
-    title.remove();
+    state.elements.regenerateButton.removeAttribute('hidden');
+    state.elements.title.remove();
   });
-  form.reset();
-  input.focus();
+  state.elements.form.reset();
+  state.elements.input.focus();
 };
 export default app;
