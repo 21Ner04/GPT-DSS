@@ -80,12 +80,12 @@ body{
         overflow: auto;  /* убирает ползунок прокрутки */
         font-size: 20px;
         padding: 12px 15px;
-        border-radius: 15px;
+        -o-border-radius: 15px;
         border: 1px solid #ccc;
         -webkit-border-radius: 25px;
         -moz-border-radius: 15px;
         -ms-border-radius: 15px;
-        -o-border-radius: 15px;
+        border-radius: 15px;
         box-shadow: rgba( 0, 0, 0, 0.05) 0 54px 55px,        rgba( 0, 0, 0, 0.05) 0 -12px 30px        rgba( 0, 0, 0, 0.05) 0 4px 5px,        rgba( 0, 0, 0, 0.05) 0 12px 3px,        rgba( 0, 0, 0, 0.05) 0 -3px 5px,    ;
 }
 /* Стили для ползунка прокрутки области ввода текста */
@@ -176,7 +176,7 @@ body{
         cursor: pointer;
         border: solid 0px rgb(25, 195, 125);
         position: relative;
-        border-radius: 10px;
+        -o-border-radius: 10px;
         bottom: 47px;
         left: 450px;
         width: 45px;
@@ -184,7 +184,7 @@ body{
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         -ms-border-radius: 10px;
-        -o-border-radius: 10px;
+        border-radius: 10px;
 }
 
     /* Стили для навигации */
@@ -219,12 +219,12 @@ select {
     padding: 10px;
     font-size: 16px;
     border: 0.5px solid #ccc;
-    border-radius: 5px;
+    -o-border-radius: 5px;
     background-color: transparent;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    border-radius: 5px;
 }
   
  /* Стили для опции выбора */
@@ -317,12 +317,12 @@ select {
   
   .custom-scr0llbar::-webkit-scrollbar-thumb {
     background-color: #888;
-    /*Цветползункаскроллбара*/border-radius: 6px;
+    /*Цветползункаскроллбара*/-o-border-radius: 4px;
      /* Скругление углов ползунка п*/  
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+    border-radius: 6px;
 }
   
   .custom-scr0llbar::-webkit-scrollbar-track {
