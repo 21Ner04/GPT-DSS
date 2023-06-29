@@ -52,7 +52,7 @@ Later, the project will be uploaded to Vercel and it will be possible to enter o
 - JavaScript
 - HTML
 
-# Example
+## Example / Пример работы 
 
 <img src="https://github.com/21Ner04/GPT-Dream-Squad-Six-/blob/main/assets/images/image%20chat-b.png" />
 <img src="https://github.com/21Ner04/GPT-Dream-Squad-Six-/blob/main/assets/images/image%20chat-l.png" />
