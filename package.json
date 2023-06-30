@@ -15,6 +15,7 @@
   },
   "author": "Dream_Squad_Six",
   "license": "ISC",
+  "Output Directory":"public",
   "bugs": {
     "url": "https://github.com/21Ner04/Dream_Squad_Six_/issues"
   },
