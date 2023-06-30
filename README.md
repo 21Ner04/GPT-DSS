@@ -40,13 +40,13 @@ Later, the project will be uploaded to Vercel and it will be possible to enter o
 
 ## Contributors / Авторы
 
-<https://github.com/21Ner04>
+- <https://github.com/21Ner04>
 
-<https://github.com/AndreyPiganov>
+- <https://github.com/AndreyPiganov>
 
-<https://github.com/ShoZYXrk>
+- <https://github.com/ShoZYXrk>
 
-<https://github.com/MABULT-Saveliy>
+- <https://github.com/MABULT-Saveliy>
 
 **_Tech used_**
 
