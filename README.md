@@ -46,6 +46,8 @@ Later, the project will be uploaded to Vercel and it will be possible to enter o
 
 <https://github.com/ShoZYXrk>
 
+<https://github.com/MABULT-Saveliy>
+
 **_Tech used_**
 
 - CSS
