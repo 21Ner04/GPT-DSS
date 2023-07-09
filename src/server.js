@@ -14,7 +14,7 @@ const tester = () => {
 // eslint-disable-next-line consistent-return
 async function sendMessage(messages) {
   // API-ключ для доступа к API OpenAI
-  const API_KEY = '-Your_API-';
+  const API_KEY = '-Your_API';
 
   // Объект с данными для отправки запроса
   const data = {
