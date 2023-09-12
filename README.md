@@ -3,6 +3,8 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/679f259b7ebe9fead8c8/test_coverage)](https://codeclimate.com/github/21Ner04/Dream_Squad_Six_/test_coverage)
 
 
+
+
 ## **_Features_** /  **_Функции_**
 
 - User-friendly interface for making requests to the OpenAI API
